@@ -7,4 +7,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Integrador';
+
+  lista : any[] = [
+    {
+      nombre: 'Carlos',
+      apellido: 'Cevallos',
+      edad: 20,
+    },
+    {
+      nombre: 'Juan',
+      apellido: 'Cevallos',
+      edad: 20,
+    },
+    {
+      nombre: 'David',
+      apellido: 'Cevallos',
+      edad: 20,
+    },
+    {
+      nombre: 'Fari',
+      apellido: 'Cevallos',
+      edad: 20,
+    },
+  ];
 }
