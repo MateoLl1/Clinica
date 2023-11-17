@@ -9,7 +9,7 @@ Este proyecto es una aplicación web desarrollada con Angular para gestionar los
 ## Configuración del Proyecto
 
 
-1. Instala las dependencias:
+Instala las dependencias:
 
     npm install
 
