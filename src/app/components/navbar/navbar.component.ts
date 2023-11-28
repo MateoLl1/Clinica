@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ImagenService } from '../../services/imagen.service';
+import { Router } from '@angular/router';
+import { ImagenService } from 'src/app/services/imagen.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,29 @@ import { ImagenService } from '../../services/imagen.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
-  constructor(private imagenService:ImagenService){
+  
+  constructor(
+    private imageService:ImagenService,
+    private router:Router
+  ) {
     
   }
 
-    
+  navegacionNavbar(id : number){
+    switch (id) {
+      case 0:
+        this.router.navigate(['home']);
+        break;
+      case 1:
+        this.router.navigate(['publicidad']);
+        break;
+      default:
+        this.router.navigate(['home']);
+        break;
+    }
+  }
+
+  cambiarTema(){
+    this.imageService.cambiarColores();
+  }
 }

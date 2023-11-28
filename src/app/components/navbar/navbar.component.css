@@ -1,0 +1,6 @@
+.appTheme {
+  display: flex;
+  align-items: center;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}

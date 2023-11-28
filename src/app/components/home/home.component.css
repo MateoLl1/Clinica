@@ -1,0 +1,17 @@
+.appTheme {
+  display: flex;
+  align-items: center;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+  margin: 20px 0 40px;
+}
+
+.cj-buscar {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 30px;
+  padding: 0 20px;
+}

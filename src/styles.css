@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+/** ESTILO DE FUENTE */
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap");
+
+:root {
+  --fondo-primary: #f4f9f9;
+  --color-fuente: #1c1c1c;
+  --inverse-fondo-primary: #1c1c1c;
+  --inverse-color-fuente: #f4f9f9;
+  /* color-blanco: #f4f9f9; */
+  /* color-negro: #1c1c1c; */
+}
+
+* {
+  transition: background-color 1s ease, color 0.1s ease;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}
+
+.content {
+  flex: 1;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}
+
+p {
+  font-size: 15px;
+}

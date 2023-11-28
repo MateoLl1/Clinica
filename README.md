@@ -8,7 +8,6 @@ Este proyecto es una aplicación web desarrollada con Angular para gestionar los
 
 ## Configuración del Proyecto
 
-
 Instala las dependencias:
 
     npm install
@@ -18,3 +17,9 @@ Instala las dependencias:
 Para ejecutar la aplicación en un servidor local, utiliza el siguiente comando:
 
     ng serve -o
+
+## Librerias usadas
+
+    https://css.gg/
+
+    https://flowbite.com/
