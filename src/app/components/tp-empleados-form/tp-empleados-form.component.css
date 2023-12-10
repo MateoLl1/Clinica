@@ -1,0 +1,12 @@
+.appTheme {
+  display: flex;
+  align-items: center;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}
+
+.cj-tipo-empleado {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+}

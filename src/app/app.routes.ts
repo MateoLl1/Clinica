@@ -1,10 +1,10 @@
-
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { PublicidadComponent } from './components/shared/publicidad/publicidad.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +12,8 @@ const APP_ROUTES: Routes = [
   { path: 'publicidad', component: PublicidadComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
+  //? FORMULARIOS
+  { path: 'tpEmpleadoForm', component: TpEmpleadosFormComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

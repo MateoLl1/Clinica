@@ -29,6 +29,7 @@ import { AppThemeService } from './services/app-theme.service';
 import { ImageFileComponent } from './components/shared/image-file/image-file.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ImageFileComponent,
     LoginComponent,
     AdminComponent,
+    TpEmpleadosFormComponent,
   ],
   imports: [
     APP_ROUTING,
