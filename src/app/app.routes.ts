@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { PublicidadComponent } from './components/shared/publicidad/publicidad.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'publicidad', component: PublicidadComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

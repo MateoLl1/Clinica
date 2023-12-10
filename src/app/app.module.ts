@@ -14,16 +14,21 @@ import { FacebookComponent } from './components/shared/icons/facebook/facebook.c
 import { InstagramComponent } from './components/shared/icons/instagram/instagram.component';
 import { TwitterComponent } from './components/shared/icons/twitter/twitter.component';
 import { YouTubeComponent } from './components/shared/icons/you-tube/you-tube.component';
-
-//* Service
-import { HttpClientModule } from '@angular/common/http';
-import { ImagenService } from './services/imagen.service';
 import { HomeComponent } from './components/home/home.component';
 import { PublicidadComponent } from './components/shared/publicidad/publicidad.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { AccessComponent } from './components/access/access.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+//* Service
+import { HttpClientModule } from '@angular/common/http';
+import { ImagenService } from './services/imagen.service';
 import { FormsModule } from '@angular/forms';
+import { AppThemeService } from './services/app-theme.service';
+import { ImageFileComponent } from './components/shared/image-file/image-file.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +43,18 @@ import { FormsModule } from '@angular/forms';
     PublicidadComponent,
     NosotrosComponent,
     SliderComponent,
+    AccessComponent,
+    ImageFileComponent,
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [
+    APP_ROUTING,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    APP_ROUTING
   ],
-  providers: [ImagenService,],
+  providers: [ImagenService,AppThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

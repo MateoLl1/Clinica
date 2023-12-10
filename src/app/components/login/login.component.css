@@ -1,0 +1,30 @@
+.appTheme {
+  display: flex;
+  align-items: center;
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}
+
+.cj-login {
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.cj-form {
+  margin-right: 5%;
+  width: 50%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px var(--color-fuente);
+}
+
+@media (max-width: 650px) {
+  img {
+    display: none;
+  }
+
+  .cj-login {
+    justify-content: center;
+  }
+}

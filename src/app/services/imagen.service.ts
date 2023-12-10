@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient,HttpHeaders } from "@angular/common/http";
 
 
 @Injectable({
@@ -7,22 +7,23 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ImagenService {
 
-  constructor() {
+  apiImage : string = ''
+  keyHostImages: string = '962e35674435a6e12712a11d03f4d97c';
+  constructor(private http:HttpClient) {}
+
+  subirImagenes(imagen:string){
+
+    const formData = new FormData();
+    formData.append('key', `${this.keyHostImages}`);
+    formData.append('image', imagen);
+
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+
+    return this.http.post(`${this.apiImage}`,formData,{
+      headers
+    })
   }
 
-  cambiarColores() {
-    const temaActual = getComputedStyle(document.documentElement).getPropertyValue('--fondo-primary');
-    const fondo = '#f4f9f9';
-    const fuente = '#1c1c1c';
-    const fondoInverse = '#1c1c1c';
-    const fuenteInverse = '#f4f9f9';
-    console.log(temaActual);
-    if (temaActual === '#f4f9f9') {
-      document.documentElement.style.setProperty('--fondo-primary', fondoInverse);
-      document.documentElement.style.setProperty('--color-fuente', fuenteInverse);
-      return;
-    }
-    document.documentElement.style.setProperty('--fondo-primary', fondo);
-    document.documentElement.style.setProperty('--color-fuente', fuente);
-  }
+  
 }
