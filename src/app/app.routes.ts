@@ -5,6 +5,7 @@ import { PublicidadComponent } from './components/shared/publicidad/publicidad.c
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
+import { EspmedFormComponent } from './components/espmed-form/espmed-form.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const APP_ROUTES: Routes = [
   { path: 'admin', component: AdminComponent },
   //? FORMULARIOS
   { path: 'tpEmpleadoForm', component: TpEmpleadosFormComponent },
+  { path: 'espmedForm', component: EspmedFormComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

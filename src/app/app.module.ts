@@ -30,6 +30,7 @@ import { ImageFileComponent } from './components/shared/image-file/image-file.co
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
+import { EspmedFormComponent } from './components/espmed-form/espmed-form.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empl
     LoginComponent,
     AdminComponent,
     TpEmpleadosFormComponent,
+    EspmedFormComponent,
   ],
   imports: [
     APP_ROUTING,
