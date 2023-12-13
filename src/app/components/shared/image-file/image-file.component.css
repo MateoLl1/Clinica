@@ -1,0 +1,28 @@
+.caja-imagen {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#imgCargar {
+  z-index: 1;
+}
+
+img {
+  border-radius: 20px;
+  box-shadow: 0 2px 4px var(--color-fuente);
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}

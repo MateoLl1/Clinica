@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from "@angular/common/http";
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImagenService {
-
-  apiImage : string = ''
+  apiImage: string = 'https://api.imgbb.com/1/upload';
   keyHostImages: string = '962e35674435a6e12712a11d03f4d97c';
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  subirImagenes(imagen:string){
-
+  subirImagenes(imagen: string) {
     const formData = new FormData();
     formData.append('key', `${this.keyHostImages}`);
     formData.append('image', imagen);
@@ -20,10 +17,8 @@ export class ImagenService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
 
-    return this.http.post(`${this.apiImage}`,formData,{
-      headers
-    })
+    return this.http.post(`${this.apiImage}`, formData, {
+      headers,
+    });
   }
-
-  
 }

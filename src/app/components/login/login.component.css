@@ -24,6 +24,10 @@
     display: none;
   }
 
+  .cj-form {
+    margin: 0;
+    width: 80%;
+  }
   .cj-login {
     justify-content: center;
   }

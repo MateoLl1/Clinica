@@ -1,0 +1,46 @@
+.appTheme {
+  background-color: var(--fondo-primary);
+  color: var(--color-fuente);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.cj-tipo-empleado {
+  display: flex;
+  margin: 40px 0;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cj-imagenes-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cj-btn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .cj-btn {
+    padding: 0 30px;
+    margin: 20px 0;
+    gap: 2px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 890px) {
+  .cj-tipo-empleado {
+    flex-direction: column;
+  }
+  .cj-imagenes-form {
+    width: 100%;
+    align-items: center;
+  }
+}
