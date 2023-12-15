@@ -30,7 +30,6 @@
           name="email"
           autocomplete="additional-name"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@flowbite.com"
           required
         />
       </div>
@@ -46,7 +45,6 @@
           name="email"
           autocomplete="additional-name"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@flowbite.com"
           required
         />
       </div>
@@ -62,7 +60,6 @@
           name="email"
           autocomplete="additional-name"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@flowbite.com"
           required
         />
       </div>
@@ -78,7 +75,6 @@
           name="email"
           autocomplete="additional-name"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@flowbite.com"
           required
         />
       </div>
@@ -114,8 +110,14 @@
     </form>
   </div>
   <div class="cj-imagenes-form">
-    <app-image-file></app-image-file>
-    <app-image-file></app-image-file>
+    <app-image-file
+      (linkImage)="imagenesPadre($event)"
+      [idTarjeta]="1"
+    ></app-image-file>
+    <app-image-file
+      (linkImage)="imagenesPadre($event)"
+      [idTarjeta]="2"
+    ></app-image-file>
   </div>
 </div>
 

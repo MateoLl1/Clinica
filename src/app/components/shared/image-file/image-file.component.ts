@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ImagenService } from 'src/app/services/imagen.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { ImagenService } from 'src/app/services/imagen.service';
 })
 export class ImageFileComponent {
   constructor(private servidor: ImagenService) {}
+
+  @Output() linkImage = new EventEmitter<any[]>();
+  @Input() idTarjeta: number | null = null;
 
   //Data del hosting de imagenes
   selectedFile: File | null = null;
@@ -41,8 +44,9 @@ export class ImageFileComponent {
     if (this.imagen) {
       this.servidor.subirImagenes(this.imagen).subscribe((data: any) => {
         this.hostImages = data.data.url;
-        console.log(data.data.url);
+        // console.log(data.data.url);
         this.llego = true;
+        this.linkImage.emit([this.idTarjeta, this.hostImages]);
       });
     } else {
       console.log('No hay imagen');

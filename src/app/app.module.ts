@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 //* Rutas
 import { APP_ROUTING } from './app.routes';
 
@@ -20,17 +19,17 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { AccessComponent } from './components/access/access.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ImageFileComponent } from './components/shared/image-file/image-file.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
+import { EspmedFormComponent } from './components/espmed-form/espmed-form.component';
 
 //* Service
 import { HttpClientModule } from '@angular/common/http';
 import { ImagenService } from './services/imagen.service';
 import { FormsModule } from '@angular/forms';
 import { AppThemeService } from './services/app-theme.service';
-import { ImageFileComponent } from './components/shared/image-file/image-file.component';
-import { LoginComponent } from './components/login/login.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
-import { EspmedFormComponent } from './components/espmed-form/espmed-form.component';
 
 @NgModule({
   declarations: [
@@ -52,13 +51,8 @@ import { EspmedFormComponent } from './components/espmed-form/espmed-form.compon
     TpEmpleadosFormComponent,
     EspmedFormComponent,
   ],
-  imports: [
-    APP_ROUTING,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-  ],
-  providers: [ImagenService,AppThemeService],
-  bootstrap: [AppComponent]
+  imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
+  providers: [ImagenService, AppThemeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
