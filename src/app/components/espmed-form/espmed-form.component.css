@@ -7,6 +7,10 @@ h1 {
   font-size: 2rem;
 }
 
+a {
+  cursor: pointer;
+}
+
 .cj-tipo-empleado {
   display: flex;
   margin: 40px 0;

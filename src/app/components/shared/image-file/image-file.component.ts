@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { ImagenService } from 'src/app/services/imagen.service';
 
 @Component({
@@ -6,11 +13,23 @@ import { ImagenService } from 'src/app/services/imagen.service';
   templateUrl: './image-file.component.html',
   styleUrls: ['./image-file.component.css'],
 })
-export class ImageFileComponent {
+export class ImageFileComponent implements OnChanges {
   constructor(private servidor: ImagenService) {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['imagenInp'] && changes['imagenInp'].currentValue) {
+      this.srcImagen = changes['imagenInp'].currentValue;
+    } else {
+      this.srcImagen = this.sinImagen;
+    }
+    if (!(this.srcImagen === this.sinImagen)) {
+      this.linkImage.emit([this.idTarjeta, this.srcImagen]);
+    }
+  }
 
   @Output() linkImage = new EventEmitter<any[]>();
   @Input() idTarjeta: number | null = null;
+  @Input() imagenInp: string | null = null;
 
   //Data del hosting de imagenes
   selectedFile: File | null = null;
@@ -19,6 +38,7 @@ export class ImageFileComponent {
   hostImages: string = '';
   llego: boolean = false;
   sinImagen = '../../../assets/img/no-image.jpeg';
+  srcImagen: string = '';
 
   //Servidor de imagenes
   onFileSelected(event: any) {
@@ -44,6 +64,7 @@ export class ImageFileComponent {
     if (this.imagen) {
       this.servidor.subirImagenes(this.imagen).subscribe((data: any) => {
         this.hostImages = data.data.url;
+        this.srcImagen = this.hostImages;
         // console.log(data.data.url);
         this.llego = true;
         this.linkImage.emit([this.idTarjeta, this.hostImages]);

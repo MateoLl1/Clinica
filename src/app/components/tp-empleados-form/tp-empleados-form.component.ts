@@ -42,7 +42,7 @@ export class TpEmpleadosFormComponent {
     }
     this.error = false;
     const objData = {
-      descr: this.txtTipoNombre,
+      descr: this.txtTipoNombre.trim(),
     };
     this.clinicaSe.registrarTipoEmpleado(objData).subscribe((data: any) => {
       if (data) {
@@ -103,7 +103,7 @@ export class TpEmpleadosFormComponent {
     this.error = false;
     const objData = {
       id: this.txtId,
-      descr: this.txtTipoNombre,
+      descr: this.txtTipoNombre.trim(),
     };
     this.clinicaSe.updateTipoEmpleado(objData).subscribe((data: any) => {
       console.log(data);

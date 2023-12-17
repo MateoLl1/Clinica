@@ -6,6 +6,5 @@
     accept="image/*"
     (change)="onFileSelected($event)"
   />
-  <img *ngIf="llego == false" [src]="sinImagen" alt="" />
-  <img *ngIf="llego == true" [src]="hostImages" alt="" />
+  <img [src]="srcImagen" alt="" />
 </div>

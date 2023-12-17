@@ -32,4 +32,20 @@ export class ClinicaService {
       data
     );
   }
+
+  getEspecialidadesMedicas() {
+    return this.http.get(`${this.clinicaApi}/admin/esp-med`);
+  }
+
+  registrarEspecialidadesMedicas(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/esp-med/insert`, data);
+  }
+
+  updateEspecialidadesMedicas(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/esp-med/update`, data);
+  }
+
+  eliminarEspecialidadesMedicas(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/esp-med/delete`, data);
+  }
 }
