@@ -9,10 +9,6 @@ import { APP_ROUTING } from './app.routes';
 // * Componenets
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FacebookComponent } from './components/shared/icons/facebook/facebook.component';
-import { InstagramComponent } from './components/shared/icons/instagram/instagram.component';
-import { TwitterComponent } from './components/shared/icons/twitter/twitter.component';
-import { YouTubeComponent } from './components/shared/icons/you-tube/you-tube.component';
 import { HomeComponent } from './components/home/home.component';
 import { PublicidadComponent } from './components/shared/publicidad/publicidad.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
@@ -22,24 +18,21 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ImageFileComponent } from './components/shared/image-file/image-file.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { TpEmpleadosFormComponent } from './components/tp-empleados-form/tp-empleados-form.component';
-import { EspmedFormComponent } from './components/espmed-form/espmed-form.component';
+import { TpEmpleadosFormComponent } from './components/formularios/tp-empleados-form/tp-empleados-form.component';
+import { EspmedFormComponent } from './components/formularios/espmed-form/espmed-form.component';
 
 //* Service
 import { HttpClientModule } from '@angular/common/http';
 import { ImagenService } from './services/imagen.service';
 import { FormsModule } from '@angular/forms';
 import { AppThemeService } from './services/app-theme.service';
+import { EmpleadoFormComponent } from './components/formularios/empleado-form/empleado-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    FacebookComponent,
-    InstagramComponent,
-    TwitterComponent,
-    YouTubeComponent,
     HomeComponent,
     PublicidadComponent,
     NosotrosComponent,
@@ -50,6 +43,7 @@ import { AppThemeService } from './services/app-theme.service';
     AdminComponent,
     TpEmpleadosFormComponent,
     EspmedFormComponent,
+    EmpleadoFormComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

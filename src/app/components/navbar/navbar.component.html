@@ -90,6 +90,12 @@
                   >{{ item.sp_me_nombre }}</a
                 >
               </li>
+              <li *ngIf="especialidadesMed.length == 0">
+                <a
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Sin especialidades</a
+                >
+              </li>
             </ul>
           </div>
         </li>

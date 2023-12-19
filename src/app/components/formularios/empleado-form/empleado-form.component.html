@@ -1,0 +1,247 @@
+<div class="cj-form">
+  <section>
+    <form class="max-w-md mx-auto">
+      <h1 class="text-5xl font-extrabold dark:text-white">
+        Registro de usuario
+      </h1>
+      <div class="relative z-0 w-full mb-5 mt-3 group">
+        <input
+          [(ngModel)]="txtID"
+          type="email"
+          name="idtxt"
+          id="floating_emailawdw"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer appTheme"
+          required
+          disabled
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >ID</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 mt-3 group">
+        <input
+          [(ngModel)]="txtEmail"
+          type="email"
+          name="floating_dawdwaemail"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer appTheme"
+          placeholder=""
+          required
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Correo electronico</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 mt-3 group">
+        <input
+          [(ngModel)]="txtCedula"
+          type="email"
+          name="dawd"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer appTheme"
+          placeholder=""
+          required
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Cedula</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-4 mt-3 group">
+        <input
+          [(ngModel)]="txtNombres"
+          type="email"
+          name="floating_email"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer appTheme"
+          placeholder=""
+          required
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Nombres</label
+        >
+      </div>
+
+      <div class="grid md:grid-cols-3 md:gap-6 mb-2">
+        <div class="max-w-sm mx-auto response-drop">
+          <label
+            for="countries"
+            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white appTheme"
+            >Sexo</label
+          >
+          <select
+            name="asd"
+            [(ngModel)]="txtSexo"
+            id="countries"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option [value]="0">Seleccione</option>
+            <option [value]="1">Masculino</option>
+            <option [value]="2">Femenino</option>
+          </select>
+        </div>
+        <div class="max-w-sm mx-auto response-drop">
+          <label
+            for="countries"
+            class="block mb-1 text-sm font-medium text-gray-900 dark:text-white appTheme"
+            >Tipo Empleado</label
+          >
+          <select
+            [(ngModel)]="txtTpEmpledo"
+            id="countries"
+            name="asds"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="0">Seleccione</option>
+            <option [value]="item.tp_em_id" *ngFor="let item of tipoEmpleados">
+              {{ item.tp_em_desc }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="cj-fecha">
+        <label for="">Fecha de nacimiento: {{ dateInput | date }}</label>
+        <input
+          value="2002-06-01"
+          name="fecha"
+          [(ngModel)]="txtFechaN"
+          type="date"
+          max="2023-12-31"
+        />
+      </div>
+    </form>
+    <app-image-file
+      [idTarjeta]="1"
+      [imagenInp]="inputImagen"
+      (linkImage)="obtenerImagen($event)"
+    ></app-image-file>
+  </section>
+
+  <p *ngIf="error" style="text-align: center" class="mt-1 mb-2 text-red-600">
+    {{ labelError }}
+  </p>
+
+  <div class="cj-btn mt-3">
+    <button
+      (click)="registrarEmpleado()"
+      type="button"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      Agregar
+    </button>
+
+    <button
+      (click)="updateEmpleado()"
+      type="button"
+      class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+    >
+      Actualizar
+    </button>
+
+    <button
+      (click)="eliminarEmpleado()"
+      type="button"
+      class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+    >
+      Eliminar
+    </button>
+    <button
+      (click)="limpiar()"
+      type="button"
+      class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+    >
+      Limpiar
+    </button>
+  </div>
+</div>
+
+<!-- TABLA DE REGISTROS -->
+
+<div
+  *ngIf="misEmpledos.length == 0"
+  style="margin: 40px 15%"
+  class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+  role="alert"
+>
+  <svg
+    class="flex-shrink-0 inline w-4 h-4 me-3"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+    />
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">No hay registros!</span>
+  </div>
+</div>
+
+<div
+  *ngIf="misEmpledos.length > 0"
+  class="relative overflow-x-auto shadow-md sm:rounded-lg"
+  style="margin: 40px 20px"
+>
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3">Nombre</th>
+        <th scope="col" class="px-6 py-3">Cedula</th>
+        <th scope="col" class="px-6 py-3">Email</th>
+        <th scope="col" class="px-6 py-3">Imagen</th>
+        <th scope="col" class="px-6 py-3">Fecha de nacimiento</th>
+        <th scope="col" class="px-6 py-3">Fecha de registro</th>
+        <th scope="col" class="px-6 py-3">Sexo</th>
+        <th scope="col" class="px-6 py-3">Tipo empleado</th>
+        <th scope="col" class="px-6 py-3">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let item of misEmpledos"
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+      >
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+          {{ item.em_nombres }}
+        </th>
+        <td class="px-6 py-4">{{ item.em_cedula }}</td>
+        <td class="px-6 py-4">{{ item.em_email }}</td>
+        <td class="px-6 py-4">{{ item.em_imagen }}</td>
+        <td class="px-6 py-4">
+          {{ item.em_fecha_na | date }}
+        </td>
+        <td class="px-6 py-4">{{ item.em_fecha_reg | date }}</td>
+        <td class="px-6 py-4">
+          {{ item.em_sexo === "M" ? "Masculino" : "Femenino" }}
+        </td>
+        <td class="px-6 py-4">
+          {{ tipoEmpleados[item.tp_em_id - 1].tp_em_desc }}
+        </td>
+        <td class="px-6 py-4 text-right">
+          <a
+            (click)="empleadoSeleccionado(item)"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >Edit</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

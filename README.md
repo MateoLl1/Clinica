@@ -12,6 +12,8 @@ Instala las dependencias:
 
     npm install
 
+    npm install sweetalert2
+
 ## Despliegue Local
 
 Para ejecutar la aplicación en un servidor local, utiliza el siguiente comando:

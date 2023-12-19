@@ -48,4 +48,20 @@ export class ClinicaService {
   eliminarEspecialidadesMedicas(data: any) {
     return this.http.post(`${this.clinicaApi}/admin/esp-med/delete`, data);
   }
+
+  getEmpleados() {
+    return this.http.get(`${this.clinicaApi}/admin/empleados`);
+  }
+
+  registrarEmpleado(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/insert`, data);
+  }
+
+  updateEmpleado(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/update`, data);
+  }
+
+  eliminarEmpleado(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/delete`, data);
+  }
 }

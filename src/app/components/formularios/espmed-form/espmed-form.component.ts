@@ -188,7 +188,11 @@ export class EspmedFormComponent {
             setTimeout(() => {
               location.reload();
             }, 1000))
-          : Swal.fire('Error al eliminar', '', 'error');
+          : Swal.fire(
+              'Error al eliminar',
+              'Empleados vinculados a este registro',
+              'error'
+            );
       });
     this.error = false;
   }
