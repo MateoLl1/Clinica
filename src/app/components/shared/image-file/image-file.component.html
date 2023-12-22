@@ -1,5 +1,5 @@
 <div class="caja-imagen">
-  <h1>Imagen {{ idTarjeta }}</h1>
+  <h1 *ngIf="!ocultarTitle">Imagen {{ idTarjeta }}</h1>
   <input
     type="file"
     id="fileInput"

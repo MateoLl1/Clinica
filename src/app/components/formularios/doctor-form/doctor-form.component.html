@@ -1,0 +1,178 @@
+<section>
+  <div class="cj-form">
+    <h3 class="text-3xl font-bold dark:text-white">Mis medicos</h3>
+    <hr class="mb-4" />
+
+    <div
+      *ngIf="doctores.length == 0"
+      class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+      role="alert"
+    >
+      <svg
+        class="flex-shrink-0 inline w-4 h-4 me-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+        />
+      </svg>
+      <span class="sr-only">Info</span>
+      <div>
+        <span class="font-medium">Sin registros!</span>
+      </div>
+    </div>
+
+    <div class="relative overflow-x-auto" *ngIf="doctores.length > 0">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Nombre</th>
+            <th scope="col" class="px-6 py-3">Cedula</th>
+            <th scope="col" class="px-6 py-3">Email</th>
+            <th scope="col" class="px-6 py-3">Imagen</th>
+            <th scope="col" class="px-6 py-3">Sexo</th>
+            <th scope="col" class="px-6 py-3">Especialidad</th>
+            <th scope="col" class="px-6 py-3">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let item of doctores"
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ item.em_nombres }}
+            </th>
+            <td class="px-6 py-4">{{ item.em_cedula }}</td>
+            <td class="px-6 py-4">{{ item.em_email }}</td>
+            <td class="px-6 py-4">{{ item.em_imagen }}</td>
+            <td class="px-6 py-4">
+              {{ item.em_sexo == "M" ? "Masculino" : "Femenino" }}
+            </td>
+            <td class="px-6 py-4">Sus espcialidad/s</td>
+            <td class="px-6 py-4">
+              <a
+                (click)="seleccionarDoctor(item)"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >Edit</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="mostrarFormulario" class="cj-data-medico">
+    <div class="text-center">
+      <h3 class="text-3xl font-bold dark:text-white">{{ txtNombre }}</h3>
+      <app-image-file
+        [ocultarTitle]="true"
+        [idTarjeta]="1"
+        [imagenInp]="linkImage"
+      ></app-image-file>
+    </div>
+    <form class="max-w-sm mx-auto">
+      <div class="mb-5">
+        <label
+          for="email"
+          name="cedula"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white appTheme"
+          >Cedula</label
+        >
+        <input
+          type="email"
+          [(ngModel)]="txtCedula"
+          name="cedula"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          for="email"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white appTheme"
+          >Email</label
+        >
+        <input
+          type="email"
+          [(ngModel)]="txtEmail"
+          name="email"
+          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          required
+        />
+      </div>
+      <button
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+      >
+        Actualizar
+      </button>
+    </form>
+
+    <div class="cj-items">
+      <h3 class="mb-4 font-semibold text-gray-900 dark:text-white appTheme">
+        Especialidades
+      </h3>
+
+      <!--! Si no existe Especialidades -->
+      <div
+        *ngIf="espMedicas.length == 0"
+        class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="flex-shrink-0 inline w-4 h-4 me-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Info</span>
+        <div>
+          <span class="font-medium">Sin registros!</span>
+        </div>
+      </div>
+
+      <!--? Hay Especialidades -->
+      <ul
+        *ngIf="espMedicas.length > 0"
+        class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      >
+        <li
+          *ngFor="let item of espMedicas"
+          (click)="seleccionarEsp(item, item.check)"
+          class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600"
+        >
+          <div class="flex items-center ps-3">
+            <input
+              [checked]="item.check"
+              id="vue-checkbox"
+              type="checkbox"
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+            />
+            <label
+              for="vue-checkbox"
+              class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >{{ item.sp_me_nombre }}</label
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

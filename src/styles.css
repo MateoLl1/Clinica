@@ -15,6 +15,10 @@
   font-family: "Chakra Petch", sans-serif;
 }
 
+a {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;

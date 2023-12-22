@@ -27,6 +27,7 @@ export class ImageFileComponent implements OnChanges {
     }
   }
 
+  @Input() ocultarTitle: boolean = false;
   @Output() linkImage = new EventEmitter<any[]>();
   @Input() idTarjeta: number | null = null;
   @Input() imagenInp: string | null = null;

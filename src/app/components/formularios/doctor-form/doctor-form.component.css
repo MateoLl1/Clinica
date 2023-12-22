@@ -1,0 +1,34 @@
+.appTheme {
+  color: var(--color-fuente);
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button {
+  width: 100%;
+}
+
+.cj-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 1rem;
+}
+
+.cj-data-medico {
+  display: flex;
+  padding: 0 7rem;
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .cj-data-medico {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}

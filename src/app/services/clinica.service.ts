@@ -64,4 +64,8 @@ export class ClinicaService {
   eliminarEmpleado(data: any) {
     return this.http.post(`${this.clinicaApi}/admin/empleado/delete`, data);
   }
+
+  getMedicos() {
+    return this.http.get(`${this.clinicaApi}/admin/empleado/medico`);
+  }
 }

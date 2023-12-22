@@ -99,7 +99,7 @@ export class EspmedFormComponent {
             }, 1000))
           : Swal.fire('Error al registrar', '', 'error');
 
-        this.limpiar();
+        // this.limpiar();
       });
 
     this.error = false;

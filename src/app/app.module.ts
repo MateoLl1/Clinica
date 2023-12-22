@@ -27,6 +27,7 @@ import { ImagenService } from './services/imagen.service';
 import { FormsModule } from '@angular/forms';
 import { AppThemeService } from './services/app-theme.service';
 import { EmpleadoFormComponent } from './components/formularios/empleado-form/empleado-form.component';
+import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { EmpleadoFormComponent } from './components/formularios/empleado-form/em
     TpEmpleadosFormComponent,
     EspmedFormComponent,
     EmpleadoFormComponent,
+    DoctorFormComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

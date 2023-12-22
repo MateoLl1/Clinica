@@ -7,6 +7,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { TpEmpleadosFormComponent } from './components/formularios/tp-empleados-form/tp-empleados-form.component';
 import { EspmedFormComponent } from './components/formularios/espmed-form/espmed-form.component';
 import { EmpleadoFormComponent } from './components/formularios/empleado-form/empleado-form.component';
+import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const APP_ROUTES: Routes = [
   { path: 'tpEmpleadoForm', component: TpEmpleadosFormComponent },
   { path: 'espmedForm', component: EspmedFormComponent },
   { path: 'empleadosForm', component: EmpleadoFormComponent },
+  { path: 'doctorForm', component: DoctorFormComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
