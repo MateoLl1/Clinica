@@ -23,10 +23,16 @@ img {
   margin: 20px 0;
   padding: 0 20px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.cj-navegacion > * {
+  margin-bottom: 20px;
+  flex: 2 0 48%;
 }
 
 @media (max-width: 450px) {

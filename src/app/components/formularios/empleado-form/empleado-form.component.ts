@@ -43,8 +43,17 @@ export class EmpleadoFormComponent {
   linkImagen: string | null = null;
   dateInput: string | null = null;
 
+  mapearTipoEmpleado(idTipoEmpleado: number): string {
+    const tipoEmpleado = this.tipoEmpleados.find(
+      (e) => e.tp_em_id === idTipoEmpleado
+    );
+
+    return tipoEmpleado.tp_em_desc ?? 'Tipo borrado';
+  }
+
   registrarEmpleado() {
     this.error = true;
+    console.log(this.txtEmail.length);
     this.labelError = 'Campos requeridos';
     if (this.txtEmail.trim() === null || this.txtEmail.trim() === '') {
       return;

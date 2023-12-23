@@ -7,8 +7,9 @@
 section {
   display: flex;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0 4rem;
+  gap: 10rem;
 }
 
 h1 {
@@ -45,11 +46,12 @@ input[type="date"] {
   gap: 10px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
   section {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    gap: 1rem;
   }
 }
 

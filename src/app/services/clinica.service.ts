@@ -68,4 +68,22 @@ export class ClinicaService {
   getMedicos() {
     return this.http.get(`${this.clinicaApi}/admin/empleado/medico`);
   }
+
+  getEspecilidadMedico(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/doctor/esp`, data);
+  }
+
+  insertMedicoEspecialidad(data: any) {
+    return this.http.post(
+      `${this.clinicaApi}/admin/empleado/medico/espM/insert`,
+      data
+    );
+  }
+
+  deleteMedicoEspecialidad(data: any) {
+    return this.http.post(
+      `${this.clinicaApi}/admin/empleado/medico/espM/delete`,
+      data
+    );
+  }
 }

@@ -1,8 +1,8 @@
 <div class="cj-form">
   <section>
-    <form class="max-w-md mx-auto">
+    <form class="max-w-md">
       <h1 class="text-5xl font-extrabold dark:text-white">
-        Registro de usuario
+        Registro de empleados
       </h1>
       <div class="relative z-0 w-full mb-5 mt-3 group">
         <input
@@ -232,7 +232,7 @@
           {{ item.em_sexo === "M" ? "Masculino" : "Femenino" }}
         </td>
         <td class="px-6 py-4">
-          {{ tipoEmpleados[item.tp_em_id - 1].tp_em_desc }}
+          {{ mapearTipoEmpleado(item.tp_em_id) }}
         </td>
         <td class="px-6 py-4 text-right">
           <a

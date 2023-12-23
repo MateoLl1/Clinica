@@ -49,13 +49,19 @@ export class TpEmpleadosFormComponent {
         Swal.fire('Registrado', '', 'success');
         setTimeout(() => {
           location.reload();
-        }, 2000);
+        }, 1000);
       } else {
         Swal.fire('No registrado', '', 'error');
       }
     });
   }
   eliminarTipo(id: string) {
+    if (this.txtId.trim() === '1' || this.txtId.trim() === '2') {
+      this.error = true;
+      this.labelError = 'Esto item no pueden ser eliminado';
+      return;
+    }
+
     if (this.txtId.trim() === '') {
       this.error = true;
       this.labelError = 'Seleccione un item';
@@ -76,7 +82,7 @@ export class TpEmpleadosFormComponent {
         ? (Swal.fire('Eliminado', '', 'success'),
           setTimeout(() => {
             location.reload();
-          }, 2000))
+          }, 1000))
         : Swal.fire(
             'Error al eliminar',
             'Antes tiene que eliminar a los empleados vinculados a este registro',

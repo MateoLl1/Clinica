@@ -199,10 +199,14 @@
           {{ item.sp_me_fecha_reg | date }}
         </td>
         <td class="px-6 py-4">{{ item.sp_me_imagen }}</td>
-        <td class="px-6 py-4">{{ item.sp_me_descr }}</td>
+        <td class="px-6 py-4" style="white-space: nowrap">
+          {{ item.sp_me_descr }}
+        </td>
         <td class="px-6 py-4">{{ item.sp_me_imagen2 }}</td>
         <td class="px-6 py-4">{{ item.sp_me_sub_ti }}</td>
-        <td class="px-6 py-4">{{ item.sp_me_parrafo }}</td>
+        <td class="px-6 py-4" style="white-space: nowrap">
+          {{ item.sp_me_parrafo }}
+        </td>
         <td class="px-6 py-4 text-right">
           <a
             (click)="espMedicaSeleccionada(item)"
