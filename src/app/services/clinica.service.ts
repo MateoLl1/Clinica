@@ -66,7 +66,11 @@ export class ClinicaService {
   }
 
   getMedicos() {
-    return this.http.get(`${this.clinicaApi}/admin/empleado/medico`);
+    return this.http.get(`${this.clinicaApi}/admin/empleado/medico/activos`);
+  }
+
+  getEmpleadosEliminados() {
+    return this.http.get(`${this.clinicaApi}/admin/empleado/papelera`);
   }
 
   getEspecilidadMedico(data: any) {
@@ -83,6 +87,17 @@ export class ClinicaService {
   deleteMedicoEspecialidad(data: any) {
     return this.http.post(
       `${this.clinicaApi}/admin/empleado/medico/espM/delete`,
+      data
+    );
+  }
+
+  recuperarEmpleado(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/recuperar`, data);
+  }
+
+  eliminarEmpleadoPerma(data: any) {
+    return this.http.post(
+      `${this.clinicaApi}/admin/empleado/delete/permanente`,
       data
     );
   }

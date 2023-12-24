@@ -8,6 +8,7 @@ import { TpEmpleadosFormComponent } from './components/formularios/tp-empleados-
 import { EspmedFormComponent } from './components/formularios/espmed-form/espmed-form.component';
 import { EmpleadoFormComponent } from './components/formularios/empleado-form/empleado-form.component';
 import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
+import { EmpleadosEliminadosFormComponent } from './components/formularios/empleados-eliminados-form/empleados-eliminados-form.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +21,10 @@ const APP_ROUTES: Routes = [
   { path: 'espmedForm', component: EspmedFormComponent },
   { path: 'empleadosForm', component: EmpleadoFormComponent },
   { path: 'doctorForm', component: DoctorFormComponent },
+  {
+    path: 'empleadosEliminadosForm',
+    component: EmpleadosEliminadosFormComponent,
+  },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

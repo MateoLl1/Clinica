@@ -4,8 +4,8 @@
     <hr class="mb-4" />
 
     <div
-      style="margin: 15%"
-      *ngIf="doctores.length == 0"
+      *ngIf="doctores.length === 0"
+      style="margin: 1% 0"
       class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
       role="alert"
     >
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="relative overflow-x-auto" *ngIf="doctores.length > 0">
+    <div *ngIf="doctores.length > 0" class="relative overflow-x-auto">
       <table
         class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
       >

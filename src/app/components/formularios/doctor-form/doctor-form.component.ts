@@ -23,6 +23,7 @@ export class DoctorFormComponent {
   constructor(private clinicaSe: ClinicaService) {
     clinicaSe.getMedicos().subscribe((data: any) => {
       this.doctores = data;
+      console.log(data);
     });
     clinicaSe.getEspecialidadesMedicas().subscribe((data: any) => {
       this.espMedicas = data;

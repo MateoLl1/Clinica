@@ -1,0 +1,28 @@
+/* Style buttons */
+.btn1 {
+  background-color: orange;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 1rem; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 1rem;
+}
+/* Style buttons */
+.btn2 {
+  background-color: red;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 1rem; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 1rem;
+}
+
+/* Darker background on mouse-over */
+.btn1:hover {
+  background-color: gray;
+}
+.btn2:hover {
+  background-color: gray;
+}
