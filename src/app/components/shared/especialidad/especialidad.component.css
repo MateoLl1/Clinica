@@ -1,0 +1,50 @@
+.cj-titule {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.cj-titule h1 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo con efecto de vidrio */
+  backdrop-filter: blur(
+    10px
+  ); /* Agrega el efecto de desenfoque para simular vidrio */
+  color: aliceblue;
+  text-align: center;
+  font-size: 3rem;
+  padding: 10px;
+  margin: 0;
+}
+
+.imagen-container img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.cj-sub {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 1rem;
+}
+
+#imagen2 {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (max-width: 770px) {
+  #imagen2 {
+    width: 100%;
+  }
+  .cj-titule h1 {
+    font-size: 1.5rem;
+  }
+}

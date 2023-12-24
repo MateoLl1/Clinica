@@ -101,4 +101,8 @@ export class ClinicaService {
       data
     );
   }
+
+  getEspecialidadMedicaById(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/esp-med/byId`, data);
+  }
 }

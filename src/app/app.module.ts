@@ -29,6 +29,7 @@ import { AppThemeService } from './services/app-theme.service';
 import { EmpleadoFormComponent } from './components/formularios/empleado-form/empleado-form.component';
 import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
 import { EmpleadosEliminadosFormComponent } from './components/formularios/empleados-eliminados-form/empleados-eliminados-form.component';
+import { EspecialidadComponent } from './components/shared/especialidad/especialidad.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { EmpleadosEliminadosFormComponent } from './components/formularios/emple
     EmpleadoFormComponent,
     DoctorFormComponent,
     EmpleadosEliminadosFormComponent,
+    EspecialidadComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

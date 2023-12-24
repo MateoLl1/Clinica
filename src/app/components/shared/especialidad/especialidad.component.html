@@ -1,0 +1,31 @@
+<section *ngIf="especialidad.length > 0">
+  <div class="cj-titule">
+    <h1>{{ especialidad[0].sp_me_nombre }}</h1>
+    <div class="imagen-container">
+      <img [src]="especialidad[0].sp_me_imagen" alt="" />
+    </div>
+  </div>
+
+  <div class="cj-sub">
+    <a
+      class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      style="width: 100%"
+    >
+      <img
+        id="imagen2"
+        class="object-cover w-full min-w-300 rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+        [src]="especialidad[0].sp_me_imagen2"
+      />
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        >
+          {{ especialidad[0].sp_me_sub_ti }}
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {{ especialidad[0].sp_me_parrafo }}
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
