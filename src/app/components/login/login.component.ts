@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    localStorage.setItem('tokenAccess', this.tokenAccess[0]);
+  }
+  tokenAccess: string[] = ['axAdmin', 'axMedico', 'axRecepcion', 'axUsuario'];
 
   errorLabel: string | null = null;
   error: boolean = false;
@@ -17,12 +20,5 @@ export class LoginComponent {
 
   validarFormulario() {
     this.router.navigate(['/admin']);
-    if (this.email.trim() === '' || this.password.trim() === '') {
-      this.error = true;
-      this.errorLabel = 'Campos requeridos';
-    } else {
-      this.error = false;
-      this.errorLabel = null;
-    }
   }
 }

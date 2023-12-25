@@ -10,26 +10,44 @@ import { EmpleadoFormComponent } from './components/formularios/empleado-form/em
 import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
 import { EmpleadosEliminadosFormComponent } from './components/formularios/empleados-eliminados-form/empleados-eliminados-form.component';
 import { EspecialidadComponent } from './components/shared/especialidad/especialidad.component';
+import { authGuard } from './guards/auth.guard';
+import { formAdGuard } from './guards/form-ad.guard';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'publicidad', component: PublicidadComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [authGuard] },
   { path: 'especialidad/:id', component: EspecialidadComponent },
-  //? FORMULARIOS
-  { path: 'tpEmpleadoForm', component: TpEmpleadosFormComponent },
-  { path: 'espmedForm', component: EspmedFormComponent },
-  { path: 'empleadosForm', component: EmpleadoFormComponent },
-  { path: 'doctorForm', component: DoctorFormComponent },
-
+  //? FORMULARIOS ADMIN
+  {
+    path: 'tpEmpleadoForm',
+    component: TpEmpleadosFormComponent,
+    canActivate: [formAdGuard],
+  },
+  {
+    path: 'espmedForm',
+    component: EspmedFormComponent,
+    canActivate: [formAdGuard],
+  },
+  {
+    path: 'empleadosForm',
+    component: EmpleadoFormComponent,
+    canActivate: [formAdGuard],
+  },
+  {
+    path: 'doctorForm',
+    component: DoctorFormComponent,
+    canActivate: [formAdGuard],
+  },
   {
     path: 'empleadosEliminadosForm',
     component: EmpleadosEliminadosFormComponent,
+    canActivate: [formAdGuard],
   },
 
-  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', pathMatch: 'full', redirectTo: '/home' },
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
