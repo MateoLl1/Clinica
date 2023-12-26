@@ -52,7 +52,11 @@
               scope="row"
               class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
             >
-              {{ item.em_nombres }}
+              <a
+                (click)="seleccionarDoctor(item)"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >{{ item.em_nombres }}</a
+              >
             </th>
             <td class="px-6 py-4">{{ item.em_cedula }}</td>
             <td class="px-6 py-4">{{ item.em_email }}</td>

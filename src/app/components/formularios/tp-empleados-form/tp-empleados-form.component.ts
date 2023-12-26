@@ -56,9 +56,14 @@ export class TpEmpleadosFormComponent {
     });
   }
   eliminarTipo(id: string) {
-    if (this.txtId.trim() === '1' || this.txtId.trim() === '2') {
+    if (
+      this.txtId.trim() === '1' ||
+      this.txtId.trim() === '2' ||
+      this.txtId.trim() === '3' ||
+      this.txtId.trim() === '4'
+    ) {
       this.error = true;
-      this.labelError = 'Esto item no pueden ser eliminado';
+      this.labelError = 'Este item no puede ser eliminado';
       return;
     }
 
