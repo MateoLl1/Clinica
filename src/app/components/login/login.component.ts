@@ -52,9 +52,15 @@ export class LoginComponent {
           } else if (usuario.tp_em_id === 2) {
             console.log('medico');
             localStorage.setItem('tokenAccess', this.tokenAccess[1]);
+            this.router.navigate(['/medico']);
           } else if (usuario.tp_em_id === 3) {
             console.log('recepcion');
             localStorage.setItem('tokenAccess', this.tokenAccess[2]);
+            this.router.navigate(['/recepcion']);
+          } else if (usuario.tp_em_id === 4) {
+            console.log('usuario');
+            localStorage.setItem('tokenAccess', this.tokenAccess[3]);
+            this.router.navigate(['/usuario']);
           }
         } else {
           Swal.fire('Credenciales Incorrectas', '', 'error');

@@ -1,14 +1,12 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
-export const authGuard: CanActivateFn = (): boolean => {
+export const recepcionGuard: CanActivateFn = () => {
   const token = localStorage.getItem('tokenAccess');
   const router = inject(Router);
-  console.log(token);
-  if (token === 'axAdmin') {
+  if (token === 'axRecepcion') {
     return true;
   }
-  console.log('Sin acceso');
   router.navigate(['login']);
   return false;
 };

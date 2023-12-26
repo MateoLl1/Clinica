@@ -17,7 +17,7 @@ import { AccessComponent } from './components/access/access.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ImageFileComponent } from './components/shared/image-file/image-file.component';
 import { LoginComponent } from './components/login/login.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from './components/roles/admin/admin.component';
 import { TpEmpleadosFormComponent } from './components/formularios/tp-empleados-form/tp-empleados-form.component';
 import { EspmedFormComponent } from './components/formularios/espmed-form/espmed-form.component';
 
@@ -30,6 +30,9 @@ import { EmpleadoFormComponent } from './components/formularios/empleado-form/em
 import { DoctorFormComponent } from './components/formularios/doctor-form/doctor-form.component';
 import { EmpleadosEliminadosFormComponent } from './components/formularios/empleados-eliminados-form/empleados-eliminados-form.component';
 import { EspecialidadComponent } from './components/shared/especialidad/especialidad.component';
+import { MedicoComponent } from './components/roles/medico/medico.component';
+import { RecepcionComponent } from './components/roles/recepcion/recepcion.component';
+import { UsuarioComponent } from './components/roles/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { EspecialidadComponent } from './components/shared/especialidad/especial
     DoctorFormComponent,
     EmpleadosEliminadosFormComponent,
     EspecialidadComponent,
+    MedicoComponent,
+    RecepcionComponent,
+    UsuarioComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],
