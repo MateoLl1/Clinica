@@ -33,6 +33,7 @@ import { EspecialidadComponent } from './components/shared/especialidad/especial
 import { MedicoComponent } from './components/roles/medico/medico.component';
 import { RecepcionComponent } from './components/roles/recepcion/recepcion.component';
 import { UsuarioComponent } from './components/roles/usuario/usuario.component';
+import { IconFileComponent } from './components/shared/icon-file/icon-file.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { UsuarioComponent } from './components/roles/usuario/usuario.component';
     MedicoComponent,
     RecepcionComponent,
     UsuarioComponent,
+    IconFileComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

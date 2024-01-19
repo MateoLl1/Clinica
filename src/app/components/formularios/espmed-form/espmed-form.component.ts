@@ -11,7 +11,7 @@ export class EspmedFormComponent {
   ///
   constructor(private clinicaSe: ClinicaService) {
     clinicaSe.getEspecialidadesMedicas().subscribe((data: any) => {
-      // console.log(data);
+      console.log(data);
       this.espMedicas = data;
     });
   }
@@ -27,9 +27,11 @@ export class EspmedFormComponent {
 
   linkImagen1: string | null = null;
   linkImagen2: string | null = null;
+  linkIcon: string | null = null;
 
   cargarImagen1: string | null = null;
   cargarImagen2: string | null = null;
+  cargarIcono: string | null = null;
 
   errorLabel: string | null = null;
   error: boolean = false;
@@ -42,6 +44,7 @@ export class EspmedFormComponent {
     this.txtParrafo = espMed.sp_me_parrafo;
     this.cargarImagen1 = espMed.sp_me_imagen;
     this.cargarImagen2 = espMed.sp_me_imagen2;
+    this.cargarIcono = espMed.sp_me_icon;
   }
 
   insertarEspMedica() {
@@ -72,7 +75,11 @@ export class EspmedFormComponent {
       return;
     }
 
-    if (this.linkImagen1 === null || this.linkImagen2 === null) {
+    if (
+      this.linkImagen1 === null ||
+      this.linkImagen2 === null ||
+      this.linkIcon === null
+    ) {
       this.errorLabel = 'Ingrese las imagenes';
       return;
     }
@@ -83,6 +90,7 @@ export class EspmedFormComponent {
       descr: this.txtDesc,
       subtitle: this.txtSubtitle,
       imagen2: this.linkImagen2,
+      icon: this.linkIcon,
       parrafo: this.txtParrafo,
     };
     this.clinicaSe
@@ -137,7 +145,11 @@ export class EspmedFormComponent {
       return;
     }
 
-    if (this.linkImagen1 === null || this.linkImagen2 === null) {
+    if (
+      this.linkImagen1 === null ||
+      this.linkImagen2 === null ||
+      this.linkIcon === null
+    ) {
       this.errorLabel = 'Ingrese las imagenes';
       return;
     }
@@ -149,6 +161,7 @@ export class EspmedFormComponent {
       descr: this.txtDesc,
       subtitle: this.txtSubtitle,
       imagen2: this.linkImagen2,
+      icon: this.linkIcon,
       parrafo: this.txtParrafo,
     };
 
@@ -205,6 +218,7 @@ export class EspmedFormComponent {
     this.txtParrafo = '';
     this.cargarImagen1 = null;
     this.cargarImagen2 = null;
+    this.cargarIcono = null;
   }
 
   imagenesPadre(link: any) {
@@ -213,6 +227,9 @@ export class EspmedFormComponent {
     }
     if (link[0] == 2) {
       this.linkImagen2 = link[1];
+    }
+    if (link[0] == 3) {
+      this.linkIcon = link[1];
     }
     // if ((this.linkImagen1, this.linkImagen2 != null)) {
     //   console.log(this.linkImagen1);

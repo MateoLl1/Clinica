@@ -1,0 +1,10 @@
+<div class="caja-imagen">
+  <h1 *ngIf="!ocultarTitle">Icono {{ idTarjeta }}</h1>
+  <input
+    type="file"
+    id="fileInput"
+    accept="image/*"
+    (change)="onFileSelected($event)"
+  />
+  <img [src]="srcImagen" alt="" />
+</div>

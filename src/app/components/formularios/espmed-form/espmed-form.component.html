@@ -123,6 +123,7 @@
       </div>
     </form>
   </div>
+  <!--? IMAGENES -->
   <div class="cj-imagenes-form">
     <app-image-file
       [imagenInp]="cargarImagen1"
@@ -134,6 +135,11 @@
       (linkImage)="imagenesPadre($event)"
       [idTarjeta]="2"
     ></app-image-file>
+    <app-icon-file
+      [imagenInp]="cargarIcono"
+      [idTarjeta]="3"
+      (linkImage)="imagenesPadre($event)"
+    ></app-icon-file>
   </div>
 </div>
 
