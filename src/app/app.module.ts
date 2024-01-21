@@ -34,6 +34,7 @@ import { MedicoComponent } from './components/roles/medico/medico.component';
 import { RecepcionComponent } from './components/roles/recepcion/recepcion.component';
 import { UsuarioComponent } from './components/roles/usuario/usuario.component';
 import { IconFileComponent } from './components/shared/icon-file/icon-file.component';
+import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { IconFileComponent } from './components/shared/icon-file/icon-file.compo
     RecepcionComponent,
     UsuarioComponent,
     IconFileComponent,
+    NoticiasFormComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

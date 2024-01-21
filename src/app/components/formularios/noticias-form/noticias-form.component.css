@@ -1,0 +1,73 @@
+.appTheme {
+  color: var(--color-fuente);
+}
+
+form {
+  width: 60%;
+}
+
+.cj-formulario {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.cj-news {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cj-btn {
+  display: flex;
+  gap: 10px;
+}
+
+.btnA {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+.btnA:hover {
+  background-color: RoyalBlue;
+}
+.btnD {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+.btnD:hover {
+  background-color: black;
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+  .cj-formulario {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cj-news {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

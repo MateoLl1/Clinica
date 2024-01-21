@@ -18,6 +18,7 @@ import { UsuarioComponent } from './components/roles/usuario/usuario.component';
 import { medicoGuard } from './guards/medico.guard';
 import { recepcionGuard } from './guards/recepcion.guard';
 import { usuarioGuard } from './guards/usuario.guard';
+import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,6 +36,11 @@ const APP_ROUTES: Routes = [
 
   { path: 'especialidad/:id', component: EspecialidadComponent },
   //? FORMULARIOS ADMIN
+  {
+    path: 'noticiasForm',
+    component: NoticiasFormComponent,
+    canActivate: [formAdGuard],
+  },
   {
     path: 'tpEmpleadoForm',
     component: TpEmpleadosFormComponent,

@@ -17,8 +17,8 @@ export class LoginComponent {
   error: boolean = false;
 
   emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  email: string = '';
-  password: string = '';
+  email: string = 'mateollerena40@gmail.com';
+  password: string = '1755136510';
 
   validarFormulario(): boolean {
     this.error = true;
