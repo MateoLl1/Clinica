@@ -12,7 +12,9 @@
         <input
           type="id"
           id="id"
-          style="background-color: #6895d2"
+          name="id"
+          [(ngModel)]="txtID"
+          style="background-color: #bbe1fa"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           required
           disabled
@@ -24,8 +26,9 @@
           >Titulo</label
         >
         <input
+          name="title"
+          [(ngModel)]="txtTitle"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          required
         />
       </div>
       <div class="mb-5">
@@ -36,12 +39,19 @@
         <textarea
           id="message"
           rows="4"
+          name="content"
+          [(ngModel)]="txtContent"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Write your thoughts here..."
         ></textarea>
+        <!-- MENSAJE DE ERROR -->
+        <p *ngIf="error" style="text-align: end" class="mt-1 text-red-600">
+          {{ errorLabel }}
+        </p>
       </div>
       <div class="cj-btn">
         <button
+          (click)="insertarNoticia()"
           type="button"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
@@ -49,6 +59,7 @@
         </button>
 
         <button
+          (click)="actulizarNoticia()"
           type="button"
           class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
         >
@@ -56,7 +67,11 @@
         </button>
       </div>
     </form>
-    <app-image-file [idTarjeta]="1" [imagenInp]="null"></app-image-file>
+    <app-image-file
+      [idTarjeta]="1"
+      [imagenInp]="srcImagen"
+      (linkImage)="cargarImagen($event)"
+    ></app-image-file>
   </div>
 </div>
 
@@ -64,28 +79,54 @@
 <h2 class="text-4xl font-bold dark:text-white" style="padding-left: 20px">
   Mis noticias
 </h2>
+<!-- ALERTA -->
+<div
+  class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+  role="alert"
+  *ngIf="noticias.length <= 0"
+  style="margin: 0 20px"
+>
+  <svg
+    class="flex-shrink-0 inline w-4 h-4 me-3"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+    />
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>No tienes ninguna noticia</div>
+</div>
+
+<!-- LISTA DE NOTICIAS -->
 <div class="cj-news">
   <div
+    *ngFor="let item of noticias"
     class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    <a href="#">
-      <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
+    <img class="rounded-t-lg" [src]="item.new_image" alt="" />
     <div class="p-5">
       <a>
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
-          Noteworthy technology acquisitions 2021
+          {{ item.new_titulo }}
         </h5>
       </a>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
+        {{ item.new_content }}
       </p>
+      <label> {{ item.new_fecha | date : "yyyy-MM-dd" }}</label>
       <div style="text-align: end">
-        <button class="btnA"><i class="fa fa-folder"></i></button>
-        <button class="btnD"><i class="fa fa-trash"></i></button>
+        <button class="btnA" (click)="seleccionarNoticia(item)">
+          <i class="fa fa-folder"></i>
+        </button>
+        <button class="btnD" (click)="eliminarNoticia(item)">
+          <i class="fa fa-trash"></i>
+        </button>
       </div>
     </div>
   </div>

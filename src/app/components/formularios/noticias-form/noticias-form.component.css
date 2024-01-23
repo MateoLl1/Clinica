@@ -67,6 +67,10 @@ form {
     gap: 1rem;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   .cj-news {
     grid-template-columns: repeat(1, 1fr);
   }

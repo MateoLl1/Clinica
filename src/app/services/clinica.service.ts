@@ -109,4 +109,21 @@ export class ClinicaService {
   validarLogin(data: any) {
     return this.http.post(`${this.clinicaApi}/auth/login`, data);
   }
+
+  getNoticias() {
+    return this.http.get(`${this.clinicaApi}/admin/news`);
+  }
+  getNoticiasById(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/news/byId`, data);
+  }
+  insertNoticia(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/news/insert`, data);
+  }
+
+  eliminarNoticia(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/news/delete`, data);
+  }
+  actualizarNoticia(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/news/update`, data);
+  }
 }
