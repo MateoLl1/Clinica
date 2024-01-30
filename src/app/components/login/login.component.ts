@@ -43,6 +43,7 @@ export class LoginComponent {
       };
       this.clinicaSe.validarLogin(objData).subscribe((data: any) => {
         const usuario = data[0];
+        console.log(data);
         if (data.length > 0) {
           Swal.fire('Credenciales correctas', '', 'success');
           if (usuario.tp_em_id === 1) {
