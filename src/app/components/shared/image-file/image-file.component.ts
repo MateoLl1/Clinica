@@ -66,7 +66,7 @@ export class ImageFileComponent implements OnChanges {
       this.servidor.subirImagenes(this.imagen).subscribe((data: any) => {
         this.hostImages = data.data.url;
         this.srcImagen = this.hostImages;
-        // console.log(data.data.url);
+        console.log(data.data.url);
         this.llego = true;
         this.linkImage.emit([this.idTarjeta, this.hostImages]);
       });

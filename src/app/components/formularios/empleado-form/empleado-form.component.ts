@@ -92,7 +92,7 @@ export class EmpleadoFormComponent {
       nombres: this.txtNombres,
       fechaNa: this.txtFechaN,
       imagen: this.linkImagen,
-      sexo: this.txtSexo === '1' ? 'M' : 'A',
+      sexo: this.txtSexo === '1' ? 'M' : 'F',
       tp_em_id: this.txtTpEmpledo,
     };
 
@@ -153,7 +153,7 @@ export class EmpleadoFormComponent {
       nombres: this.txtNombres,
       fechaNa: this.txtFechaN,
       imagen: this.linkImagen,
-      sexo: this.txtSexo === '1' ? 'M' : 'A',
+      sexo: this.txtSexo === '1' ? 'M' : 'F',
       tp_em_id: this.txtTpEmpledo,
     };
 
