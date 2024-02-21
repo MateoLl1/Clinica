@@ -1,0 +1,90 @@
+<section class="sec-usuario">
+  <div class="div">
+    <h1
+      class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white text-center"
+    >
+      <span *ngIf="usuario.tp_em_id == 2"
+        >Bienvenido a la pagina de administracion medica</span
+      >
+      <span *ngIf="usuario.tp_em_id == 3"
+        >Bienvenido a la pagina de recepcion</span
+      >
+      <span *ngIf="usuario.tp_em_id == 4"
+        >Bienvenido en que podemos ayudarte</span
+      >
+    </h1>
+    <p
+      *ngIf="usuario.tp_em_id == 2"
+      class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+    >
+      Rebisa tu calendario de citas y la informacion de todos tus pacientes
+    </p>
+  </div>
+  <div
+    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div class="flex justify-end px-4 pt-4">
+      <button
+        id="dropdownButton"
+        data-dropdown-toggle="dropdown"
+        class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+        type="button"
+      >
+        <span class="sr-only">Open dropdown</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 16 3"
+        >
+          <path
+            d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"
+          />
+        </svg>
+      </button>
+      <!-- Dropdown menu -->
+      <div
+        id="dropdown"
+        class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+      >
+        <ul class="py-2" aria-labelledby="dropdownButton">
+          <li>
+            <a
+              href="#"
+              (click)="cerrarSession()"
+              class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              >Cerrar session</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col items-center pb-10">
+      <img
+        class="w-20 h-20 mb-3 rounded-full shadow-lg"
+        src="{{ usuario.em_imagen }}"
+        alt="Bonnie image"
+        style="object-fit: cover"
+      />
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+        {{ usuario.em_nombres }}
+      </h5>
+      <span
+        *ngIf="usuario.tp_em_id === 2"
+        class="text-sm text-gray-500 dark:text-gray-400"
+        >Doctor ID {{ usuario.em_id }}</span
+      >
+      <span
+        *ngIf="usuario.tp_em_id === 3"
+        class="text-sm text-gray-500 dark:text-gray-400"
+        >Recepcion ID {{ usuario.em_id }}</span
+      >
+      <span
+        *ngIf="usuario.tp_em_id === 4"
+        class="text-sm text-gray-500 dark:text-gray-400"
+        >Paciente ID {{ usuario.em_id }}</span
+      >
+    </div>
+  </div>
+</section>

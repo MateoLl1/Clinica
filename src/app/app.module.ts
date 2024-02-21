@@ -35,6 +35,7 @@ import { RecepcionComponent } from './components/roles/recepcion/recepcion.compo
 import { UsuarioComponent } from './components/roles/usuario/usuario.component';
 import { IconFileComponent } from './components/shared/icon-file/icon-file.component';
 import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
+import { UsuarioDataComponent } from './components/shared/usuario-data/usuario-data.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { NoticiasFormComponent } from './components/formularios/noticias-form/no
     UsuarioComponent,
     IconFileComponent,
     NoticiasFormComponent,
+    UsuarioDataComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

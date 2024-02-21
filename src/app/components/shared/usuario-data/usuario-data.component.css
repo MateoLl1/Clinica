@@ -1,0 +1,15 @@
+.sec-usuario {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f0edcf;
+  padding: 10px 5%;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+@media (max-width: 500px) {
+  .sec-usuario {
+    flex-direction: column;
+  }
+}

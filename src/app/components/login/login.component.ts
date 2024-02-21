@@ -17,7 +17,7 @@ export class LoginComponent {
   error: boolean = false;
 
   emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  email: string = 'mateollerena40@gmail.com';
+  email: string = 'oscar@gmail.com';
   password: string = '1755136510';
 
   validarFormulario(): boolean {
@@ -43,8 +43,9 @@ export class LoginComponent {
       };
       this.clinicaSe.validarLogin(objData).subscribe((data: any) => {
         const usuario = data[0];
-        console.log(data);
+        // console.log(usuario);
         if (data.length > 0) {
+          localStorage.setItem('infoUserToken', JSON.stringify(usuario));
           Swal.fire('Credenciales correctas', '', 'success');
           if (usuario.tp_em_id === 1) {
             console.log('admin');
