@@ -19,12 +19,14 @@ import { medicoGuard } from './guards/medico.guard';
 import { recepcionGuard } from './guards/recepcion.guard';
 import { usuarioGuard } from './guards/usuario.guard';
 import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
+import { GenerarCitaMedicaComponent } from './components/roles/negocio/generar-cita-medica/generar-cita-medica.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'publicidad', component: PublicidadComponent },
   { path: 'login', component: LoginComponent },
+  //? ROLES
   { path: 'admin', component: AdminComponent, canActivate: [authGuard] },
   { path: 'medico', component: MedicoComponent, canActivate: [medicoGuard] },
   {
@@ -65,6 +67,13 @@ const APP_ROUTES: Routes = [
     path: 'empleadosEliminadosForm',
     component: EmpleadosEliminadosFormComponent,
     canActivate: [formAdGuard],
+  },
+
+  //? NEGOCIO
+  {
+    path: 'generarCitaMedica',
+    component: GenerarCitaMedicaComponent,
+    canActivate: [recepcionGuard],
   },
 
   { path: '**', pathMatch: 'full', redirectTo: '/home' },

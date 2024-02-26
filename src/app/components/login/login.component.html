@@ -20,6 +20,7 @@
           >Correo electronico</label
         >
         <input
+          (keyup.enter)="verificarCredenciales()"
           [(ngModel)]="email"
           name="email"
           type="email"
@@ -37,6 +38,7 @@
           >Contraseña</label
         >
         <input
+          (keyup.enter)="verificarCredenciales()"
           [(ngModel)]="password"
           type="password"
           name="password"

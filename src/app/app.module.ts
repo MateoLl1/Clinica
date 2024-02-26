@@ -36,6 +36,8 @@ import { UsuarioComponent } from './components/roles/usuario/usuario.component';
 import { IconFileComponent } from './components/shared/icon-file/icon-file.component';
 import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
 import { UsuarioDataComponent } from './components/shared/usuario-data/usuario-data.component';
+import { GenerarCitaMedicaComponent } from './components/roles/negocio/generar-cita-medica/generar-cita-medica.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { UsuarioDataComponent } from './components/shared/usuario-data/usuario-d
     IconFileComponent,
     NoticiasFormComponent,
     UsuarioDataComponent,
+    GenerarCitaMedicaComponent,
+    LoadingComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

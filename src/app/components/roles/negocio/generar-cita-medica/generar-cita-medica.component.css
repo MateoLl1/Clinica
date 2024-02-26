@@ -1,0 +1,47 @@
+.sec-bus-pac {
+  display: flex;
+  justify-content: center;
+  padding: 30px 2%;
+  align-items: center;
+  gap: 20px;
+}
+
+.sec-asignar-turno {
+  position: relative;
+  display: grid;
+  margin: 20px;
+  border: 2px black solid;
+  justify-content: center;
+}
+
+.cj-espe {
+  width: fit-content;
+  padding: 10px;
+  margin: 20px 2%;
+  border: 2px black solid;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+}
+.cj-asig-fechas {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px 2%;
+  border: 2px black solid;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+  gap: 5px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.select-button {
+  background-color: skyblue;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

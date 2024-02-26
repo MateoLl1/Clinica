@@ -126,4 +126,18 @@ export class ClinicaService {
   actualizarNoticia(data: any) {
     return this.http.post(`${this.clinicaApi}/admin/news/update`, data);
   }
+
+  buscarPaciente(data: any) {
+    return this.http.post(`${this.clinicaApi}/buscar/paciente`, data);
+  }
+
+  buscarMedicosPorEspecialidad(data: any) {
+    return this.http.post(
+      `${this.clinicaApi}/buscar/medicoPorEspecialidad`,
+      data
+    );
+  }
+  agendarCitaMedica(data: any) {
+    return this.http.post(`${this.clinicaApi}/agendar-citas`, data);
+  }
 }
