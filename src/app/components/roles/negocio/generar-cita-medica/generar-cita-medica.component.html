@@ -183,7 +183,7 @@
         Asignacion de fechas
       </h3>
       Dia
-      <input [(ngModel)]="txtFecha" type="date" min="2024-02-20" />
+      <input [(ngModel)]="txtFecha" type="date" [min]="fechaActual" />
       Hora
       <input type="time" [(ngModel)]="txtHora" />
     </div>

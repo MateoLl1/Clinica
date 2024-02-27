@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./generar-cita-medica.component.css'],
 })
 export class GenerarCitaMedicaComponent {
+  fechaActual: string = '';
+
   //? NEGOCIO USUARIO
   usuarioBuscados: any[] = [];
   especilidadesMed: any[] = [];
@@ -25,6 +27,17 @@ export class GenerarCitaMedicaComponent {
 
   constructor(private clinicaSe: ClinicaService) {
     this.cargarEspecialidades();
+    this.cargarFecha();
+  }
+
+  cargarFecha() {
+    const fechaHoy: Date = new Date();
+    const año: number = fechaHoy.getFullYear();
+    const mes: string = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
+    const dia: string = fechaHoy.getDate().toString().padStart(2, '0');
+
+    const fechaFormateada: string = `${año}-${mes}-${dia}`;
+    this.fechaActual = fechaFormateada;
   }
 
   objetoNoVacio(obj: any): boolean {
@@ -145,8 +158,5 @@ export class GenerarCitaMedicaComponent {
     this.paciente = null;
     this.doctor = null;
     this.especialidad = null;
-  }
-  asignarBoton() {
-    console.log('');
   }
 }
