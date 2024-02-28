@@ -140,4 +140,11 @@ export class ClinicaService {
   agendarCitaMedica(data: any) {
     return this.http.post(`${this.clinicaApi}/agendar-citas`, data);
   }
+
+  cargarCitasPorDoctor(data: any) {
+    return this.http.post(`${this.clinicaApi}/medico/citas`, data);
+  }
+  eliminarCitaMedica(data: any) {
+    return this.http.post(`${this.clinicaApi}/medico/citas/eliminar`, data);
+  }
 }

@@ -1,0 +1,14 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+.cj-especilidades {
+  border: 1px black solid;
+  border-radius: 20px;
+  padding: 20px;
+}

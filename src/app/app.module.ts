@@ -38,6 +38,9 @@ import { NoticiasFormComponent } from './components/formularios/noticias-form/no
 import { UsuarioDataComponent } from './components/shared/usuario-data/usuario-data.component';
 import { GenerarCitaMedicaComponent } from './components/roles/negocio/generar-cita-medica/generar-cita-medica.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { CitasAsignadasDoctoresComponent } from './components/roles/negocio/citas-asignadas-doctores/citas-asignadas-doctores.component';
+import { RedAlertComponent } from './components/shared/alerts/red-alert/red-alert.component';
+import { CircleAlertComponent } from './components/shared/alerts/circle-alert/circle-alert.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     UsuarioDataComponent,
     GenerarCitaMedicaComponent,
     LoadingComponent,
+    CitasAsignadasDoctoresComponent,
+    RedAlertComponent,
+    CircleAlertComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],
