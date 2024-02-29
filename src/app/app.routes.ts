@@ -21,6 +21,7 @@ import { usuarioGuard } from './guards/usuario.guard';
 import { NoticiasFormComponent } from './components/formularios/noticias-form/noticias-form.component';
 import { GenerarCitaMedicaComponent } from './components/roles/negocio/generar-cita-medica/generar-cita-medica.component';
 import { CitasAsignadasDoctoresComponent } from './components/roles/negocio/citas-asignadas-doctores/citas-asignadas-doctores.component';
+import { CitasAsignadasPacientesComponent } from './components/roles/negocio/citas-asignadas-pacientes/citas-asignadas-pacientes.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -80,6 +81,11 @@ const APP_ROUTES: Routes = [
   {
     path: 'verCitasDoctores',
     component: CitasAsignadasDoctoresComponent,
+    canActivate: [recepcionGuard],
+  },
+  {
+    path: 'verCitasPacientes',
+    component: CitasAsignadasPacientesComponent,
     canActivate: [recepcionGuard],
   },
 

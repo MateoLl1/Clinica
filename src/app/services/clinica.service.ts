@@ -147,4 +147,7 @@ export class ClinicaService {
   eliminarCitaMedica(data: any) {
     return this.http.post(`${this.clinicaApi}/medico/citas/eliminar`, data);
   }
+  cargarCitasPorPaciente(data: any) {
+    return this.http.post(`${this.clinicaApi}/paciente/citas`, data);
+  }
 }

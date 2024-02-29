@@ -30,7 +30,7 @@ export class GenerarCitaMedicaComponent {
     this.cargarFecha();
   }
 
-  cargarFecha() {
+  cargarFecha(): string {
     const fechaHoy: Date = new Date();
     const año: number = fechaHoy.getFullYear();
     const mes: string = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
@@ -38,6 +38,7 @@ export class GenerarCitaMedicaComponent {
 
     const fechaFormateada: string = `${año}-${mes}-${dia}`;
     this.fechaActual = fechaFormateada;
+    return fechaFormateada;
   }
 
   objetoNoVacio(obj: any): boolean {

@@ -41,6 +41,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { CitasAsignadasDoctoresComponent } from './components/roles/negocio/citas-asignadas-doctores/citas-asignadas-doctores.component';
 import { RedAlertComponent } from './components/shared/alerts/red-alert/red-alert.component';
 import { CircleAlertComponent } from './components/shared/alerts/circle-alert/circle-alert.component';
+import { UsuarioByIdComponent } from './components/roles/widgets/usuario-by-id/usuario-by-id.component';
+import { CitasAsignadasPacientesComponent } from './components/roles/negocio/citas-asignadas-pacientes/citas-asignadas-pacientes.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { CircleAlertComponent } from './components/shared/alerts/circle-alert/ci
     CitasAsignadasDoctoresComponent,
     RedAlertComponent,
     CircleAlertComponent,
+    UsuarioByIdComponent,
+    CitasAsignadasPacientesComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],
