@@ -2,3 +2,48 @@
   [tipoUsuario]="0"
   (usuarioId)="obtenerId($event)"
 ></app-usuario-by-id>
+
+<section style="margin: 30px" *ngIf="citasPaciente.length > 0">
+  <div class="relative overflow-x-auto">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Estado</th>
+          <th scope="col" class="px-6 py-3">Paciente</th>
+          <th scope="col" class="px-6 py-3">Cedula</th>
+          <th scope="col" class="px-6 py-3">Fecha</th>
+          <th scope="col" class="px-6 py-3">Hora</th>
+          <th scope="col" class="px-6 py-3">Edit</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of citasPaciente">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            <app-circle-alert
+              *ngIf="item.ag_fecha > fechaDeHoy"
+              [selectColor]="0"
+            ></app-circle-alert>
+            <app-circle-alert
+              *ngIf="item.ag_fecha < fechaDeHoy"
+              [selectColor]="1"
+            ></app-circle-alert>
+          </th>
+          <td class="px-6 py-4">{{ item.em_nombres }}</td>
+          <td class="px-6 py-4">{{ item.em_cedula }}</td>
+          <td class="px-6 py-4">{{ item.ag_fecha | date : "yyyy-MM-dd" }}</td>
+          <td class="px-6 py-4">{{ item.ag_hora }}</td>
+          <td class="px-6 py-4"><a style="color: red"> Eliminar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div *ngIf="citasPaciente.length === 0" style="margin-bottom: 10%"></div>

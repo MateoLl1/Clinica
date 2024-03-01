@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ClinicaService } from 'src/app/services/clinica.service';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-citas-asignadas-pacientes',
@@ -8,7 +9,14 @@ import { ClinicaService } from 'src/app/services/clinica.service';
 })
 export class CitasAsignadasPacientesComponent {
   idPaciente: number | null = null;
-  constructor(private clinicaSe: ClinicaService) {}
+  citasPaciente: any[] = [];
+  fechaDeHoy: String = '';
+  constructor(
+    private clinicaSe: ClinicaService,
+    private helper: HelperService
+  ) {
+    this.fechaDeHoy = helper.cargarFechadeHoy();
+  }
   obtenerId(id: number) {
     this.idPaciente = id;
     this.cargarCitas();
@@ -20,6 +28,7 @@ export class CitasAsignadasPacientesComponent {
       .cargarCitasPorPaciente({ id: this.idPaciente })
       .subscribe((data: any) => {
         console.log(data);
+        this.citasPaciente = data;
       });
   }
 }
