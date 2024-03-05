@@ -39,7 +39,9 @@
           <td class="px-6 py-4">{{ item.em_cedula }}</td>
           <td class="px-6 py-4">{{ item.ag_fecha | date : "yyyy-MM-dd" }}</td>
           <td class="px-6 py-4">{{ item.ag_hora }}</td>
-          <td class="px-6 py-4"><a style="color: red"> Eliminar</a></td>
+          <td class="px-6 py-4">
+            <a (click)="eliminarCita(item)" style="color: red"> Eliminar</a>
+          </td>
         </tr>
       </tbody>
     </table>
