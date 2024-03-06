@@ -22,6 +22,7 @@ import { NoticiasFormComponent } from './components/formularios/noticias-form/no
 import { GenerarCitaMedicaComponent } from './components/roles/negocio/generar-cita-medica/generar-cita-medica.component';
 import { CitasAsignadasDoctoresComponent } from './components/roles/negocio/citas-asignadas-doctores/citas-asignadas-doctores.component';
 import { CitasAsignadasPacientesComponent } from './components/roles/negocio/citas-asignadas-pacientes/citas-asignadas-pacientes.component';
+import { ActualizarPacienteComponent } from './components/roles/negocio/actualizar-paciente/actualizar-paciente.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -86,6 +87,11 @@ const APP_ROUTES: Routes = [
   {
     path: 'verCitasPacientes',
     component: CitasAsignadasPacientesComponent,
+    canActivate: [recepcionGuard],
+  },
+  {
+    path: 'actualicar-paciente',
+    component: ActualizarPacienteComponent,
     canActivate: [recepcionGuard],
   },
 

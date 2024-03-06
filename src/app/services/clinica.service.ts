@@ -150,4 +150,7 @@ export class ClinicaService {
   cargarCitasPorPaciente(data: any) {
     return this.http.post(`${this.clinicaApi}/paciente/citas`, data);
   }
+  cargarUsuariosById(data: any) {
+    return this.http.post(`${this.clinicaApi}/admin/empleado/byId`, data);
+  }
 }

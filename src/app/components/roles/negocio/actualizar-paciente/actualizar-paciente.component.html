@@ -1,0 +1,113 @@
+<app-usuario-by-id
+  *ngIf="mostrarFormulario === false"
+  (usuarioId)="cargandoPaciente($event)"
+></app-usuario-by-id>
+
+<section *ngIf="mostrarFormulario === true" class="sec-form-paciente">
+  <app-label-button
+    (click)="cerrarFormulario()"
+    class="close-button"
+    [label]="'X'"
+  ></app-label-button>
+  <form>
+    <h3 class="mb-2 text-3xl font-bold dark:text-white">
+      Informacion del paciente
+    </h3>
+
+    <!--! FORMULARIO -->
+    <div class="mb-5">
+      <label
+        for="base-input"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >ID</label
+      >
+      <input
+        disabled
+        type="text"
+        id="base-input"
+        name="txtId"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        style="background-color: gray"
+        [(ngModel)]="txtId"
+      />
+    </div>
+    <div class="mb-5">
+      <label
+        for="base-input"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Nombres</label
+      >
+      <input
+        type="text"
+        id="base-input"
+        name="txtNombre"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        [(ngModel)]="txtNombre"
+      />
+    </div>
+    <div class="mb-5">
+      <label
+        for="base-input"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Cedula</label
+      >
+      <input
+        type="text"
+        id="base-input"
+        name="txtCedula"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        [(ngModel)]="txtCedula"
+      />
+    </div>
+    <div class="mb-5">
+      <label
+        for="base-input"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Email</label
+      >
+      <input
+        type="text"
+        id="base-input"
+        name="txtEmail"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        [(ngModel)]="txtEmail"
+      />
+    </div>
+    <form>
+      <div class="mb-3" style="display: flex; align-items: center; gap: 10px">
+        <label>
+          Fecha de naciemiento : {{ txtFecha | date : "YYYY-MM-dd" }}
+        </label>
+        <input type="date" [max]="fechaHoy" />
+      </div>
+
+      <div class="mb-2">
+        <label> Sexo: </label>
+        <select name="optSexo" [(ngModel)]="txtSexo">
+          <option value="0">Seleccione:</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+      </div>
+    </form>
+    <app-red-alert
+      *ngIf="errorForm"
+      label="Formulario incorrecto"
+    ></app-red-alert>
+    <app-label-button
+      (click)="actualizarPaciente()"
+      label="Actualizar"
+    ></app-label-button>
+    <app-color-button
+      (click)="eliminarPaciente()"
+      label="Eliminar"
+      [selectedColor]="2"
+    ></app-color-button>
+  </form>
+  <app-image-file
+    (linkImage)="imagenOutput($event)"
+    [imagenInp]="srcImagen"
+  ></app-image-file>
+</section>
+
+<div class="mb-10"></div>

@@ -43,6 +43,9 @@ import { RedAlertComponent } from './components/shared/alerts/red-alert/red-aler
 import { CircleAlertComponent } from './components/shared/alerts/circle-alert/circle-alert.component';
 import { UsuarioByIdComponent } from './components/roles/widgets/usuario-by-id/usuario-by-id.component';
 import { CitasAsignadasPacientesComponent } from './components/roles/negocio/citas-asignadas-pacientes/citas-asignadas-pacientes.component';
+import { ActualizarPacienteComponent } from './components/roles/negocio/actualizar-paciente/actualizar-paciente.component';
+import { LabelButtonComponent } from './components/shared/buttons/label-button/label-button.component';
+import { ColorButtonComponent } from './components/shared/buttons/color-button/color-button.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { CitasAsignadasPacientesComponent } from './components/roles/negocio/cit
     CircleAlertComponent,
     UsuarioByIdComponent,
     CitasAsignadasPacientesComponent,
+    ActualizarPacienteComponent,
+    LabelButtonComponent,
+    ColorButtonComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],
