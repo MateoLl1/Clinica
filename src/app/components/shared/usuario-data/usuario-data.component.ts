@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuario-data.component.css'],
 })
 export class UsuarioDataComponent {
+  @Output() usuarioDataToken = new EventEmitter<any>();
+
   usuario: any = null;
   constructor(private router: Router) {
     this.obtenerUsuario();
@@ -14,7 +16,13 @@ export class UsuarioDataComponent {
   obtenerUsuario() {
     this.usuario = localStorage.getItem('infoUserToken');
     this.usuario = JSON.parse(this.usuario);
-    console.log(this.usuario);
+    // console.log(this.usuario);
+    this.emitirInfoUsuario();
+  }
+
+  emitirInfoUsuario() {
+    if (this.usuario === null) return;
+    this.usuarioDataToken.emit([this.usuario]);
   }
 
   cerrarSession() {

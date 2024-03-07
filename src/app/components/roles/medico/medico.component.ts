@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-medico',
   templateUrl: './medico.component.html',
-  styleUrls: ['./medico.component.css']
+  styleUrls: ['./medico.component.css'],
 })
-export class MedicoComponent {
-
-}
+export class MedicoComponent {}

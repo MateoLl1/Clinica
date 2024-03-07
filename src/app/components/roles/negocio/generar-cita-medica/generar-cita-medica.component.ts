@@ -98,7 +98,10 @@ export class GenerarCitaMedicaComponent {
       console.log(objData);
       this.clinicaSe.agendarCitaMedica(objData).subscribe((data: any) => {
         data
-          ? Swal.fire('Registrado', 'Su se registro correctamente', 'success')
+          ? (Swal.fire('Registrado', 'Su se registro correctamente', 'success'),
+            setTimeout(() => {
+              location.reload();
+            }, 1000))
           : Swal.fire(
               'Error',
               'Estos datos coinciden con una cita ya exitente',
