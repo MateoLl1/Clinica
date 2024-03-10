@@ -1,1 +1,81 @@
-<p>calendario-doctor works!</p>
+<section class="sec-esocjer-esp">
+  <h1>Filtrar por :</h1>
+  <select (click)="filtrarCitas()" [(ngModel)]="txtFiltroValor">
+    <option value="0">Todos</option>
+    <option *ngFor="let item of especialidades" value="{{ item.sp_me_id[0] }}">
+      {{ item.sp_me_nombre }}
+    </option>
+  </select>
+</section>
+
+<div 
+  style="margin: 20px 20%;"
+  *ngIf="citas.length === 0"
+>
+<app-red-alert label="Sin citas asignadas"></app-red-alert></div>
+<section  class="sec-tabla">
+  <div class="relative overflow-x-auto">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Estado</th>
+          <th scope="col" class="px-6 py-3">Especialidad</th>
+          <th scope="col" class="px-6 py-3">Fecha</th>
+          <th scope="col" class="px-6 py-3">Hora</th>
+          <th scope="col" class="px-6 py-3">Paciente</th>
+          <th scope="col" class="px-6 py-3">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of citas"
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+        >
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            <app-circle-alert *ngIf="fechaHoy > item.ag_fecha " [selectColor]="1"></app-circle-alert>
+            <app-circle-alert *ngIf="fechaHoy < item.ag_fecha " [selectColor]="0"></app-circle-alert>
+          </th>
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ item.ag_hora }}
+          </th>
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ item.ag_fecha | date : "YYYY-MM-dd" }}
+          </th>
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ item.ag_hora }}
+          </th>
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ item.em_nombres }}
+          </th>
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            <a routerLink="/consulta-paciente" *ngIf="fechaHoy<item.ag_fecha" style="color: red"> Consulta</a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div style="margin-bottom: 500px"></div>

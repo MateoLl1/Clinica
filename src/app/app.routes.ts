@@ -24,6 +24,7 @@ import { CitasAsignadasDoctoresComponent } from './components/roles/negocio/cita
 import { CitasAsignadasPacientesComponent } from './components/roles/negocio/citas-asignadas-pacientes/citas-asignadas-pacientes.component';
 import { ActualizarPacienteComponent } from './components/roles/negocio/actualizar-paciente/actualizar-paciente.component';
 import { CalendarioDoctorComponent } from './components/roles/medico/logic/calendario-doctor/calendario-doctor.component';
+import { ConsultaPacienteComponent } from './components/roles/medico/logic/consulta-paciente/consulta-paciente.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -101,6 +102,12 @@ const APP_ROUTES: Routes = [
   {
     path: 'calendario-doctor',
     component: CalendarioDoctorComponent,
+    canActivate: [medicoGuard],
+  },
+
+  {
+    path: 'consulta-paciente',
+    component: ConsultaPacienteComponent,
     canActivate: [medicoGuard],
   },
 

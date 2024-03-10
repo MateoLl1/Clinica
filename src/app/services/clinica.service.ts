@@ -77,6 +77,13 @@ export class ClinicaService {
     return this.http.post(`${this.clinicaApi}/admin/empleado/doctor/esp`, data);
   }
 
+  getEspecilidadMedicoCargado(data: any) {
+    return this.http.post(
+      `${this.clinicaApi}/admin/empleado/doctorID/esp`,
+      data
+    );
+  }
+
   insertMedicoEspecialidad(data: any) {
     return this.http.post(
       `${this.clinicaApi}/admin/empleado/medico/espM/insert`,
@@ -152,5 +159,9 @@ export class ClinicaService {
   }
   cargarUsuariosById(data: any) {
     return this.http.post(`${this.clinicaApi}/admin/empleado/byId`, data);
+  }
+
+  caledarioCitasDoctor(data: any) {
+    return this.http.post(`${this.clinicaApi}/medico/citas/calendario`, data);
   }
 }
