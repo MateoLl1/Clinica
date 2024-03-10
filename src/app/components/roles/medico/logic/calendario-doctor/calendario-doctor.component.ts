@@ -10,7 +10,7 @@ import { HelperService } from 'src/app/services/helper.service';
 export class CalendarioDoctorComponent {
   fechaHoy : string = ''
   doctor: any = null;
-  especialidades: any = [];
+  especialidades: any[] = [];
   citas: any[] = [];
   citasFiltradas: any[] = [];
   txtFiltroValor: number = 0;
@@ -21,12 +21,20 @@ export class CalendarioDoctorComponent {
     this.obtenerTokenData();
     this.cargarCitasPorEspecialidad();
     this.fechaHoy =help.cargarFechadeHoy();
-    console.log(this.fechaHoy);
   }
 
   filtrarCitas() {
-    console.log(this.txtFiltroValor);
-    const newData = this.citas.filter(citas => citas.sp_id === this.txtFiltroValor);
+    if (this.txtFiltroValor != 0) {
+      const newData = this.citas.filter(citas => citas.sp_id == this.txtFiltroValor);
+      this.citasFiltradas = newData;
+      const name = this.especialidades.find(esp => esp.sp_me_id[0] == this.txtFiltroValor);
+      
+      for (let i = 0; i < this.citasFiltradas.length; i++) {
+        this.citasFiltradas[i].sp_me_nombre = name.sp_me_nombre;
+      }
+    }else{
+      this.citasFiltradas = this.citas;
+    }
   }
 
   cargarEspecialidades() {
@@ -43,7 +51,7 @@ export class CalendarioDoctorComponent {
       .caledarioCitasDoctor({ id: this.doctor.em_id })
       .subscribe((data: any) => {
         this.citas = data;
-        console.log(this.citas);
+        this.citasFiltradas = this.citas;
       });
   }
 

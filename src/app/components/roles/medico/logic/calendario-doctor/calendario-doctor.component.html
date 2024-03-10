@@ -10,10 +10,10 @@
 
 <div 
   style="margin: 20px 20%;"
-  *ngIf="citas.length === 0"
+  *ngIf="citasFiltradas.length === 0"
 >
 <app-red-alert label="Sin citas asignadas"></app-red-alert></div>
-<section  class="sec-tabla">
+<section *ngIf="citasFiltradas.length > 0"  class="sec-tabla">
   <div class="relative overflow-x-auto">
     <table
       class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -32,7 +32,7 @@
       </thead>
       <tbody>
         <tr
-          *ngFor="let item of citas"
+          *ngFor="let item of citasFiltradas"
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
         >
           <th
@@ -46,7 +46,7 @@
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            {{ item.ag_hora }}
+            {{ item.sp_me_nombre ?? '' }}
           </th>
           <th
             scope="row"
@@ -78,4 +78,4 @@
   </div>
 </section>
 
-<div style="margin-bottom: 500px"></div>
+<div style="margin-bottom: 200px"></div>
