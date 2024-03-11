@@ -48,6 +48,7 @@ import { LabelButtonComponent } from './components/shared/buttons/label-button/l
 import { ColorButtonComponent } from './components/shared/buttons/color-button/color-button.component';
 import { CalendarioDoctorComponent } from './components/roles/medico/logic/calendario-doctor/calendario-doctor.component';
 import { ConsultaPacienteComponent } from './components/roles/medico/logic/consulta-paciente/consulta-paciente.component';
+import { Head1Component } from './components/shared/text/head1/head1.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ConsultaPacienteComponent } from './components/roles/medico/logic/consu
     ColorButtonComponent,
     CalendarioDoctorComponent,
     ConsultaPacienteComponent,
+    Head1Component,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

@@ -1,21 +1,38 @@
-<h1>DATOS DEL PACIENTE</h1>
-<h1>DATOS DE LA ESPCIELAIDAD</h1>
 
+<app-head1 class="text-center" label="Datos de la consulta"></app-head1>
+<hr class="mb-3">
+<section class="con-datos">
+    <div class="data" *ngIf="paciente != null">
+        <h1>Paciente: {{paciente.em_nombres}}</h1>
+        <img [src]="paciente.em_imagen" alt="">
+    </div>
+    <div class="data" *ngIf="paciente != null">
+        <h1>Doctor: {{doctor.em_nombres}}</h1>
+        <img [src]="doctor.em_imagen" alt="">
+    </div>
+    <div class="data" *ngIf="paciente != null">
+        <h1>Especialidad: {{especiliadad.sp_me_nombre}}</h1>
+        <img [src]="especiliadad.sp_me_icon" alt="">
+    </div>
+</section>
 <div class="form-consulta">
     <div class="con-input-asistencia">
-        <input id="inAsistencia" type="checkbox">
+        <input (click)="asistencia()" id="inAsistencia" type="checkbox">
         <label for="inAsistencia">Asistencia</label>
     </div>
+    <div *ngIf="txtAsistenecia">
     <h1>Motivo de la consulta:</h1>
-    <textarea  cols="30" rows="10"></textarea>
+    <textarea [(ngModel)]="txtMotivo"  cols="30" rows="10"></textarea>
     <h1>Diagnostico del doctor:</h1>
-    <textarea  cols="30" rows="10"></textarea>
+    <textarea [(ngModel)]="txtDiagnostico"  cols="30" rows="10"></textarea>
     <h1>Tratamiento:</h1>
-    <textarea  cols="30" rows="10"></textarea>
+    <textarea  [(ngModel)]="txtTratamiento" cols="30" rows="10"></textarea>
     <h1>Indicaciones medicas:</h1>
-    <textarea  cols="30" rows="10"></textarea>
+    <textarea [(ngModel)]="txtIndicaciones"  cols="30" rows="10"></textarea>
+    <app-red-alert *ngIf="error" label="Campos requeridos"></app-red-alert>
     <div class="con-finalizar">
-        <app-color-button label="Finalizar"></app-color-button>
+        <app-color-button (click)="terminarConsulta()" label="Finalizar"></app-color-button>
+    </div>
     </div>
 </div>
 

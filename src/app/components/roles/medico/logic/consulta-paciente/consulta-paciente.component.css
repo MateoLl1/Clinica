@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     padding: 40px 30px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 textarea{
@@ -11,13 +11,47 @@ textarea{
 }
 
 .con-input-asistencia{
+    display: flex;
+    align-items: center;
     position: absolute;
     right: 0;
     margin-right: 30px;
+    gap: 5px;
+
 }
 .con-finalizar{
     width: 300px;
     position: absolute;
     right: 0;
     margin-right: 30px;
+}
+
+.con-datos{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.data{
+    padding: 20px;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 1px black solid;    
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+.data img{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+@media (max-width:600px) {
+    .con-datos{
+        flex-direction: column;
+        margin: 0 5%;
+    }
 }

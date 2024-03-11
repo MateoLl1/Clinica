@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClinicaService } from 'src/app/services/clinica.service';
 import { HelperService } from 'src/app/services/helper.service';
 
@@ -15,12 +16,21 @@ export class CalendarioDoctorComponent {
   citasFiltradas: any[] = [];
   txtFiltroValor: number = 0;
 
-  
-
-  constructor(private clinica: ClinicaService,private help :HelperService) {
+  constructor(
+    private clinica: ClinicaService,
+    private router: Router,
+    private help :HelperService) {
     this.obtenerTokenData();
     this.cargarCitasPorEspecialidad();
     this.fechaHoy =help.cargarFechadeHoy();
+  }
+
+  navegarConsulta(item : any){
+    console.log(item);
+    const espID = item.sp_id;
+    const drID = item.dr_id;
+    const paID = item.pa_id;
+    this.router.navigate([`/consulta-paciente/${espID}/${drID}/${paID}`]);
   }
 
   filtrarCitas() {

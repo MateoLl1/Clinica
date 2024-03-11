@@ -106,7 +106,7 @@ const APP_ROUTES: Routes = [
   },
 
   {
-    path: 'consulta-paciente',
+    path: 'consulta-paciente/:espID/:dcID/:paID',
     component: ConsultaPacienteComponent,
     canActivate: [medicoGuard],
   },
