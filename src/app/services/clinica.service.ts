@@ -172,4 +172,8 @@ export class ClinicaService {
   validarConsultaYaAtendida(data: any) {
     return this.http.post(`${this.clinicaApi}/medico/consulta/yaAtendida`, data);
   }
+
+  cargarHistorialPacienteById(data: any) {
+    return this.http.post(`${this.clinicaApi}/paciente/historial/id`, data);
+  }
 }

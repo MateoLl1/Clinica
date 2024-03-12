@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClinicaService } from 'src/app/services/clinica.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-consulta-paciente',
@@ -26,7 +27,11 @@ export class ConsultaPacienteComponent {
   txtTratamiento : string = ''
   txtIndicaciones : string = ''
 
-  constructor(private activeLink:ActivatedRoute,private clinicaSe:ClinicaService) {
+  constructor(
+    private activeLink:ActivatedRoute,
+    private clinicaSe:ClinicaService,
+    private route: Router
+  ) {
     activeLink.params.subscribe((id)=>{
       this.espId = id['espID'];
       this.drID = id['dcID'];
@@ -61,6 +66,11 @@ export class ConsultaPacienteComponent {
     
     this.clinicaSe.insertConsultayDiagnostico(objData).subscribe((data:any)=>{
       console.log(data);
+      data 
+      ? (Swal.fire('Consulta enviada', '', 'success'),setTimeout(() => {
+        this.route.navigate(['/calendario-doctor'])
+      }, 1000))
+      : Swal.fire('Consulta enviada', '', 'success')
       
     })
     

@@ -50,6 +50,7 @@ import { CalendarioDoctorComponent } from './components/roles/medico/logic/calen
 import { ConsultaPacienteComponent } from './components/roles/medico/logic/consulta-paciente/consulta-paciente.component';
 import { Head1Component } from './components/shared/text/head1/head1.component';
 import { HistorialPacienteComponent } from './components/roles/usuario/historial-paciente/historial-paciente.component';
+import { HistoriaInfoComponent } from './components/roles/usuario/historia-info/historia-info.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { HistorialPacienteComponent } from './components/roles/usuario/historial
     ConsultaPacienteComponent,
     Head1Component,
     HistorialPacienteComponent,
+    HistoriaInfoComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

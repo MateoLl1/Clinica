@@ -1,0 +1,32 @@
+<div class="factura">
+  <h1 class="titulo">DATOS DE LA CONSULTA</h1>
+
+  <app-red-alert
+    *ngIf="historia.co_asistio != 'A'"
+    class="alerta"
+    label="Tu no asististe a esta consulta"
+  ></app-red-alert>
+
+  <section class="datos">
+    <h2>DOCTOR:</h2>
+    <p>{{ historia.em_nombres[1] }}</p>
+
+    <h2>ESPECIALIDAD:</h2>
+    <p>{{ historia.sp_me_nombre }}</p>
+
+    <h2>PACIENTE:</h2>
+    <p>{{ historia.em_nombres[0] }}</p>
+
+    <h2>MOTIVO:</h2>
+    <p>{{ historia.co_motivo }}</p>
+
+    <h2>Análisis médico:</h2>
+    <p>{{ historia.co_examen }}</p>
+
+    <h2>Tratamiento:</h2>
+    <p>{{ historia.dg_tratamiento }}</p>
+
+    <h2>Indicaciones:</h2>
+    <p>{{ historia.dg_indicaciones }}</p>
+  </section>
+</div>

@@ -25,6 +25,8 @@ import { CitasAsignadasPacientesComponent } from './components/roles/negocio/cit
 import { ActualizarPacienteComponent } from './components/roles/negocio/actualizar-paciente/actualizar-paciente.component';
 import { CalendarioDoctorComponent } from './components/roles/medico/logic/calendario-doctor/calendario-doctor.component';
 import { ConsultaPacienteComponent } from './components/roles/medico/logic/consulta-paciente/consulta-paciente.component';
+import { HistorialPacienteComponent } from './components/roles/usuario/historial-paciente/historial-paciente.component';
+import { HistoriaInfoComponent } from './components/roles/usuario/historia-info/historia-info.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -108,6 +110,18 @@ const APP_ROUTES: Routes = [
   {
     path: 'consulta-paciente/:espID/:dcID/:paID/:agID',
     component: ConsultaPacienteComponent,
+    canActivate: [medicoGuard],
+  },
+
+  {
+    path: 'historial-paciente',
+    component: HistorialPacienteComponent,
+    canActivate: [medicoGuard],
+  },
+
+  {
+    path: 'historia-info',
+    component: HistoriaInfoComponent,
     canActivate: [medicoGuard],
   },
 
