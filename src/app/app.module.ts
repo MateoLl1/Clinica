@@ -49,6 +49,7 @@ import { ColorButtonComponent } from './components/shared/buttons/color-button/c
 import { CalendarioDoctorComponent } from './components/roles/medico/logic/calendario-doctor/calendario-doctor.component';
 import { ConsultaPacienteComponent } from './components/roles/medico/logic/consulta-paciente/consulta-paciente.component';
 import { Head1Component } from './components/shared/text/head1/head1.component';
+import { HistorialPacienteComponent } from './components/roles/usuario/historial-paciente/historial-paciente.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { Head1Component } from './components/shared/text/head1/head1.component';
     CalendarioDoctorComponent,
     ConsultaPacienteComponent,
     Head1Component,
+    HistorialPacienteComponent,
   ],
   imports: [APP_ROUTING, BrowserModule, FormsModule, HttpClientModule],
   providers: [ImagenService, AppThemeService],

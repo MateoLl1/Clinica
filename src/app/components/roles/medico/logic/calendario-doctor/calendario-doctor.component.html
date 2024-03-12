@@ -52,7 +52,8 @@
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            {{ item.ag_fecha | date : "YYYY-MM-dd" }}
+          {{ item.ag_fecha | date: "yyyy-MM-dd" }}
+
           </th>
           <th
             scope="row"
@@ -70,7 +71,7 @@
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            <a (click)="navegarConsulta(item)" *ngIf="fechaHoy<item.ag_fecha" style="color: red"> Consulta</a>
+            <a (click)="navegarConsulta(item)" *ngIf="item.atendido === false" style="color: red"> Consulta</a>
           </th>
         </tr>
       </tbody>

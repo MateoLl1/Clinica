@@ -12,6 +12,7 @@ export class ConsultaPacienteComponent {
   espId: number = 0;
   drID: number = 0;
   paId: number = 0;
+  agID: number = 0;
   //!DATOS
   especiliadad: any = {};
   paciente: any = {};
@@ -19,7 +20,7 @@ export class ConsultaPacienteComponent {
 
   //!FORMULARIO
   error : boolean = false;
-  txtAsistenecia : boolean = true;
+  txtAsistenecia : boolean = false;
   txtMotivo : string = ''
   txtDiagnostico : string = ''
   txtTratamiento : string = ''
@@ -29,7 +30,8 @@ export class ConsultaPacienteComponent {
     activeLink.params.subscribe((id)=>{
       this.espId = id['espID'];
       this.drID = id['dcID'];
-      this.paId = id['paID'];
+      this.paId = id['paID'];  
+      this.agID = id['agID'];  
     })
     this.cargarDatos()
   }
@@ -45,14 +47,22 @@ export class ConsultaPacienteComponent {
   }
 
   terminarConsulta(){
-    if (!this.validar()) return
-    const objData = {
-      motivo: this.txtMotivo,
-      diagnostico: this.txtDiagnostico,
-      tratamiento: this.txtTratamiento,
-      indicaciones: this.txtIndicaciones
+    if (this.txtAsistenecia) {
+      if (!this.validar()) return
     }
-    console.log(objData);
+    const objData = {
+      motivo : this.txtMotivo,
+      diagnostico : this.txtDiagnostico,
+      tratamiento : this.txtTratamiento,
+      indicaciones : this.txtIndicaciones,
+      asitencia : this.txtAsistenecia,
+      agId : this.agID,
+    }
+    
+    this.clinicaSe.insertConsultayDiagnostico(objData).subscribe((data:any)=>{
+      console.log(data);
+      
+    })
     
   }
 

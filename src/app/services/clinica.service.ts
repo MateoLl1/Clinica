@@ -164,4 +164,12 @@ export class ClinicaService {
   caledarioCitasDoctor(data: any) {
     return this.http.post(`${this.clinicaApi}/medico/citas/calendario`, data);
   }
+
+  insertConsultayDiagnostico(data: any) {
+    return this.http.post(`${this.clinicaApi}/consulta/medica/diagnostico`, data);
+  }
+
+  validarConsultaYaAtendida(data: any) {
+    return this.http.post(`${this.clinicaApi}/medico/consulta/yaAtendida`, data);
+  }
 }

@@ -30,9 +30,9 @@
     <h1>Indicaciones medicas:</h1>
     <textarea [(ngModel)]="txtIndicaciones"  cols="30" rows="10"></textarea>
     <app-red-alert *ngIf="error" label="Campos requeridos"></app-red-alert>
-    <div class="con-finalizar">
-        <app-color-button (click)="terminarConsulta()" label="Finalizar"></app-color-button>
-    </div>
-    </div>
+</div>
+<div class="con-finalizar">
+    <app-color-button (click)="terminarConsulta()" label="Finalizar"></app-color-button>
+</div>
 </div>
 
